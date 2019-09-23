@@ -4,14 +4,15 @@ This repository is a library of user interface components in react, designed to 
 ## What Components Does the Library Contain?
 
 - basicInput
-  - Buttons.js
-  - Selectors.js
+  - Buttons
+  - HyperLink
+  - Selectors
+  - Text
 - collection
-  - List.js
-  - GridView.js
-  - Table.js
-- text
-  - TextIn.js
+  - List
+  - Grid
+  - Table
+  - Tree
 - Navigation
   - Menu
 
