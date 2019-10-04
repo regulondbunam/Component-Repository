@@ -10,7 +10,7 @@
 
 # production
 /build
-/ui-Lib
+/uiComp
 
 # misc
 .DS_Store

@@ -21,7 +21,7 @@ export default class Button extends Component {
             <button
                 type="button"
                 className="simpleButton"
-                onClick={handleOnClickLink}
+                onClick={this.handleOnClickLink}
             >
                 {props.children}
             </button>

@@ -1,6 +1,6 @@
 {
   "name": "regulondb-component-repository",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "RegulonDB UI ComponentRepository",
   "main": "index.js",
   "scripts": {
