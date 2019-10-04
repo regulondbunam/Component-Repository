@@ -1,4 +1,6 @@
 src
 demo
+doc
+ui-Lib
 .babelrc
 webpack.config.js

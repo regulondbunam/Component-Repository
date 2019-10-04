@@ -10,7 +10,7 @@
 
 # production
 /build
-/lib
+/ui-Lib
 
 # misc
 .DS_Store

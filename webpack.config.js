@@ -2,10 +2,10 @@ var path = require('path');
 
 module.exports = [{
     mode: 'production',
-    entry: './src/index.js',
+    entry: './src/basicInput/buttons/Button.js',
     output: {
-        path: path.resolve('uiLib'),
-        filename: 'index.js',
+        path: path.resolve('uiComp/basicInput/buttons'),
+        filename: 'Button.js',
         libraryTarget: 'commonjs2'
     },
     module: {
