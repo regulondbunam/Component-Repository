@@ -23,7 +23,7 @@ export default class Button extends Component {
                 className="simpleButton"
                 onClick={this.handleOnClickLink}
             >
-                {props.children}
+                {this.props.children}
             </button>
         )
     }
