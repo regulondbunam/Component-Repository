@@ -1,29 +1,55 @@
 .simpleButton {
-  background-color: rgb(43, 0, 122); 
-  border: none;
+  width: 110px;
+  height: 32px;
+  background-color: #32617d;
   color: white;
-  padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  padding-top: 10px;
+  font-family: SegoeUI;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
 }
 .simpleButton:hover{
 cursor: pointer;
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
 }
+.simpleButton:active{
+  background-color: #3d779b;
+}
+
 .accentButton {
-  background-color: rgb(199, 57, 14); 
-  border: none;
+  width: 110px;
+  height: 32px;
+  background-color: #c93a1d;;
   color: white;
-  padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  padding-top: 10px;
+  font-family: SegoeUI;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
 }
 .accentButton:hover{
 cursor: pointer;
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
 }
+
+.accentButton:active{
+  border: solid 1px #ffffff;
+  }
 
 .disableButton {
 background-color: rgb(94, 94, 94); 
