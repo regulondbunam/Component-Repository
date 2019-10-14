@@ -1,0 +1,41 @@
+.grid-simple {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    overflow: auto;
+    position:relative;
+    border: solid 2px #3d779b;
+    background-color: #ffffff;
+  }
+  .grid-simple:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6); 
+  }
+  .grid-simple:active {
+    box-shadow: 0 0 10px 0 rgba(201, 58, 29, 0.8);
+  }
+  .grid-disabled {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    overflow: auto;
+    position:relative;
+    border: solid 1px #3d779b;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6); 
+  }
+  .grid-accent {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    overflow: auto;
+    position:relative;
+    background-color: #d5d5d7;
+  }
+  .grid-accent:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+  }
+  .grid-accent:active{
+    box-shadow: 0 0 10px 0 rgba(201, 58, 29, 0.8);
+  }
