@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import './Style.css';
 import { STYLES_BUTTON } from './StaticVar';
 
-export default class Button extends Component {
+let link = document.createElement('link');
+link.rel = 'stylesheet';
+link.type = 'text/css'; 
+link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+document.getElementsByTagName('HEAD')[0].appendChild(link);
 
-    Base = (props) => {
-        return (
-            <button type="button"
-                className={selectStyle(props.type)} onClick={this.handleOnClickLink}>
-                {this.props.children}
-            </button>
-        )
-    }
+export default class Button extends Component {
 
     handleOnClickLink = (event) => {
         this.props.disabled
@@ -55,6 +51,51 @@ Button.defaultProps = {
     size: 'default',
     type: 'default',
     look: {},
+    ripples: true,
+    href: null,
+    onClick: noAction
+};
+
+export class CircularB extends Component {
+
+    handleOnClickLink = (event) => {
+        this.props.disabled
+            ? noAction()
+            : this.props.onClick(event);
+    };
+
+    render() {
+        const {
+            disabled,
+            href,
+            icon,
+            ripples,
+            size,
+            type
+        } = this.props;
+        return (
+            <a href={href} className={"circularButton"}  onClick={this.handleOnClickLink}>
+                <i className="material-icons">{icon}</i>
+            </a>
+        )
+
+    }
+}
+
+CircularB.propTypes = {
+    disabled: PropTypes.bool,
+    size: PropTypes.string,
+    icon: PropTypes.string,
+    ripples: PropTypes.bool,
+    onClick: PropTypes.func,
+    href: PropTypes.string
+};
+
+CircularB.defaultProps = {
+    children: 'RegulonDB Button!!',
+    disabled: false,
+    size: 'default',
+    icon: 'sentiment_satisfied_alt',
     ripples: true,
     href: null,
     onClick: noAction
