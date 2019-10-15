@@ -78,6 +78,10 @@ cursor: not-allowed;
   background-color: #ffffff;
 }
 
+.dropdown{
+  max-width: 500px;
+}
+
 .dd {
   background-color: #32617d;
   color: white;
@@ -98,4 +102,9 @@ cursor: not-allowed;
 .dd:hover {
   cursor: pointer;
   background-color: #62a9d3;
+}
+
+.d{
+    position: absolute;
+    background-color: antiquewhite;
 }

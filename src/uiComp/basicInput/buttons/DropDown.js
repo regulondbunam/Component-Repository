@@ -17,16 +17,17 @@ export default class DropDown extends Component {
     }
 
     render() {
+        const children = this.props.children
         if (this.state.hover) {
             return(
-                <div  onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+                <div className={'dropdown'} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
                     <div className={'dd'} >
                         {this.props.label}
                     </div>
-                    <div style={{position: 'absolute'}}>
-                        <div>
-                            hola
-                        </div>
+                    <div className='d'>
+                            {
+                                children
+                            }
                     </div>
                 </div>
             )
