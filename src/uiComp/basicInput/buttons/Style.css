@@ -77,3 +77,25 @@ cursor: not-allowed;
 .circularButton:active{
   background-color: #ffffff;
 }
+
+.dd {
+  background-color: #32617d;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  padding: 5px 10px;
+  font-family: SegoeUI;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+
+.dd:hover {
+  cursor: pointer;
+  background-color: #62a9d3;
+}
