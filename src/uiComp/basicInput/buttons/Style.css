@@ -20,6 +20,7 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
 }
 .simpleButton:active{
   background-color: #3d779b;
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0);
 }
 
 .accentButton {
@@ -29,7 +30,7 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
   display: inline-block;
   padding: 5px 10px;
   font-family: SegoeUI;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -44,8 +45,8 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
 }
 
 .accentButton:active{
-  border: solid 1px #ffffff;
-  }
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0);
+}
 
 .disableButton {
   background-color: #949494;
@@ -62,32 +63,45 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
-opacity: 0.6;
-cursor: not-allowed;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 .circularButton{
-  border-radius: 100%;
-  padding: 10px 10px;
-  background-color: #120175;
+  border-radius: 50%;
+  font-size: 2vw;
+  padding: 6px 6px 0px 6px;
+  background-color: #000000;
+  color: rgba(255, 255, 255, 1);
 }
 .circularButton:hover{
-  background-color: #0e93ff;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
+  border: solid 1px #000000;
   cursor: pointer;
 }
 .circularButton:active{
-  background-color: #ffffff;
+  background-color: #72a7c7;
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.35);
 }
 
 .dropdown{
-  max-width: 500px;
+  border: solid 1px #000000;
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
 }
 
-.dd {
-  background-color: #32617d;
-  color: white;
-  text-align: center;
+.dropdown:hover{
+  border: solid 1px #000000;
+  background-color: #72a7c7;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+}
+
+.dd-head{
+  padding: 0px 5px 5px 5px;
+  text-align: left;
   display: inline-block;
-  padding: 5px 10px;
   font-family: SegoeUI;
   font-size: 16px;
   font-weight: normal;
@@ -96,15 +110,91 @@ cursor: not-allowed;
   line-height: 1.43;
   letter-spacing: normal;
   text-align: center;
+}
+.dd-body{
+  position: absolute;
+  background-color: #F4F5F5;
+  border: solid 1px #000000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+}
+.dd-split{
+  padding: 0px 5px 5px 5px;
+  text-align: left;
+  display: inline-block;
+  font-family: SegoeUI;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.split{
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+}
+.sp-head{
+  background-color: #32617d;
   color: #ffffff;
+  padding: 5px 10px;
+  text-align: left;
+  display: inline-block;
+  font-family: SegoeUI;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
 }
 
-.dd:hover {
+.sp-head:hover{
   cursor: pointer;
-  background-color: #62a9d3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+}
+.sp-head:active{
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.6);
+  background-color: #72a7c7;
+}
+.sp-head-active{
+  cursor: pointer;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-align: left;
+  display: inline-block;
+  font-family: SegoeUI;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: center;
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.6);
+  background-color: #72a7c7;
 }
 
-.d{
-    position: absolute;
-    background-color: antiquewhite;
+.sp-body{
+  list-style-type: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+  position: absolute;
+  color: #000000;
+  padding: 5px 10px;
+  text-align: center;
+  font-family: SegoeUI;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  border-bottom: solid 1px #000000;
+  border-left: solid 1px #000000;
+  border-right: solid 1px #000000;
+  background-color: #72a7c7;
+}
+
+.sp-item:hover{
+  cursor: pointer;
+  background-color: #ffffff;
 }

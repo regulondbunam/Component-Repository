@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Style.css';
-import { STYLES_BUTTON } from './StaticVar';
+
+let link = document.createElement('link');
+link.rel = 'stylesheet';
+link.type = 'text/css'; 
+link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+document.getElementsByTagName('HEAD')[0].appendChild(link);
+
 
 export default class DropDown extends Component {
 
@@ -21,10 +27,10 @@ export default class DropDown extends Component {
         if (this.state.hover) {
             return(
                 <div className={'dropdown'} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-                    <div className={'dd'} >
-                        {this.props.label}
+                    <div className={"dd-head"}>
+                        {this.props.label+"  "}<i className="material-icons" style={{fontSize: "18px"}}>keyboard_arrow_up</i>
                     </div>
-                    <div className='d'>
+                    <div className={"dd-body"}> 
                             {
                                 children
                             }
@@ -34,9 +40,9 @@ export default class DropDown extends Component {
           
         } else {
             return(
-                <div onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-                <div className={"dd"}>
-                    {this.props.label}
+                <div className={'dropdown'} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+                <div className={"dd-head"}>
+                    {this.props.label+"  "}<i className="material-icons" style={{fontSize: "18px"}} >keyboard_arrow_down</i>
                 </div>
                 </div>
             )
@@ -51,6 +57,6 @@ DropDown.propTypes = {
 };
 
 DropDown.defaultProps = {
-    label: 'RegulonDB DropDown',
+    label: 'DropDown',
     disabled: false,
 };
