@@ -8,7 +8,7 @@ link.type = 'text/css';
 link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
 document.getElementsByTagName('HEAD')[0].appendChild(link);
 
-export default class Flip extends Component {
+export default class Split extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -82,7 +82,7 @@ class ListItem extends Component{
 }
 
 
-Flip.propTypes = {
+Split.propTypes = {
 	href: PropTypes.string,
 	label: PropTypes.string,
 	options: PropTypes.array,
@@ -90,7 +90,7 @@ Flip.propTypes = {
 	onClick: PropTypes.func
 };
 
-Flip.defaultProps = {
+Split.defaultProps = {
 	href: null,
 	label: 'Select Option',
 	options: ['Option-a', 'Option-b'],

@@ -70,14 +70,16 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
   border-radius: 50%;
   font-size: 2vw;
   padding: 6px 6px 0px 6px;
+  text-decoration: none;
+  display: inline-block;
   background-color: #000000;
   color: rgba(255, 255, 255, 1);
 }
 .circularButton:hover{
   background-color: #ffffff;
   color: rgb(0, 0, 0);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
-  border: solid 1px #000000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 10);
+  
   cursor: pointer;
 }
 .circularButton:active{
@@ -197,4 +199,28 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
 .sp-item:hover{
   cursor: pointer;
   background-color: #ffffff;
+}
+
+.flip{
+  font-size: 1vw;
+  padding: 1px 1px 0px 1px;
+  background-color: white;
+  color: #72a7c7;
+  border: solid #72a7c7 1px; 
+}
+
+.flip:hover{
+  color: #3d779b;
+}
+
+.flip-label{
+  font-family: SegoeUI;
+  display: inline-block;
+  margin: 5px;
+  color: #3d779b;
+}
+
+.flip-box{
+  display:table-cell;
+  vertical-align:middle
 }
