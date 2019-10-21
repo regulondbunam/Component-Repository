@@ -50,5 +50,30 @@ module.exports = [
 				}
 			]
 		}
+	},
+	{
+		mode: 'production',
+		entry: './src/uiComp/basicInput/buttons/Split.js',
+		output: {
+			path: path.resolve('uiComp/basicInput/buttons'),
+			filename: 'Split.js',
+			libraryTarget: 'commonjs2'
+		},
+		module: {
+			rules: [
+				{
+					test: /\.jsx?$/,
+					exclude: /(node_modules)/,
+					use: 'babel-loader'
+				},
+				{
+					test: /\.(s*)css$/,
+                    use: [ 
+                        'style-loader',
+                        'css-loader',
+                    ]
+				}
+			]
+		}
 	}
 ];
