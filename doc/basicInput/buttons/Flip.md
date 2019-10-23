@@ -1,15 +1,15 @@
-# DropDown Component 0.1
+# Flip Component 0.1
 
 to import:
 ```js
   import Flip from './uiComp/basicInput/buttons/Flip'
 ```
 
-## Content in DropDown component
+## Content in Flip component
 
 ### Default Component
 
-#### Flp button
+#### Flip button
 
 ![Flip B](https://i.ibb.co/dc3m5tW/Captura-de-Pantalla-2019-10-23-a-la-s-12-03-29.png)
 

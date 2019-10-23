@@ -1,4 +1,4 @@
-# DropDown Component 0.1
+# Split Component 0.1
 
 to import:
 ```js
@@ -22,6 +22,6 @@ use component
 
 name | Data Type  | Default  | Description
 --|---|---|--
-label  | String  | 'Select Option'  | label 
+label  | String  | 'Select Option'  | label
 options  | Array String  | [] |  options
 onClick  | Function  | noAction  | function to select a option
