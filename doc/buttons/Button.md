@@ -24,6 +24,7 @@ use Component
 #### Cirular button
 ![Circular Button](https://i.ibb.co/GxCv4PG/Captura-de-Pantalla-2019-10-23-a-la-s-11-27-12.png) use Component
   ```js
+  import  {CircularB} from './uiComp/basicInput/buttons/Button'
   <Button type="accent" icon="icon_name" />
   ````
 to modify the icon of the circular button place the name of the icon in the prop icon get the names of the icons in the link
