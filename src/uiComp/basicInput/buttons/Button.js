@@ -13,7 +13,7 @@ export default class Button extends Component {
 
     handleOnClickLink = (event) => {
         this.props.disabled
-            ? noAction()
+            ? noAction(1)
             : this.props.onClick(event);
     };
 
@@ -21,9 +21,6 @@ export default class Button extends Component {
         const {
             disabled,
             href,
-            look,
-            ripples,
-            size,
             type
         } = this.props;
         return (
@@ -37,10 +34,7 @@ export default class Button extends Component {
 
 Button.propTypes = {
     disabled: PropTypes.bool,
-    size: PropTypes.string,
     type: PropTypes.string,
-    look: PropTypes.object,
-    ripples: PropTypes.bool,
     onClick: PropTypes.func,
     href: PropTypes.string
 };
@@ -48,10 +42,7 @@ Button.propTypes = {
 Button.defaultProps = {
     children: 'RegulonDB Button!!',
     disabled: false,
-    size: 'default',
     type: 'default',
-    look: {},
-    ripples: true,
     href: null,
     onClick: noAction
 };
@@ -60,18 +51,14 @@ export class CircularB extends Component {
 
     handleOnClickLink = (event) => {
         this.props.disabled
-            ? noAction()
+            ? noAction(1)
             : this.props.onClick(event);
     };
 
     render() {
         const {
-            disabled,
             href,
             icon,
-            ripples,
-            size,
-            type
         } = this.props;
         return (
             <a href={href} className={"circularButton"}  onClick={this.handleOnClickLink}>
@@ -84,25 +71,27 @@ export class CircularB extends Component {
 
 CircularB.propTypes = {
     disabled: PropTypes.bool,
-    size: PropTypes.string,
     icon: PropTypes.string,
-    ripples: PropTypes.bool,
     onClick: PropTypes.func,
     href: PropTypes.string
 };
 
 CircularB.defaultProps = {
-    children: 'RegulonDB Button!!',
     disabled: false,
-    size: 'default',
     icon: 'sentiment_satisfied_alt',
-    ripples: true,
     href: null,
     onClick: noAction
 };
 
-function noAction() {
-    console.error('Button has no activity');
+function noAction(mod) {
+    switch(mod){
+        case 1:
+            console.log('Button disabled')
+            break
+        default:
+            console.error('Button has no activity')
+    }
+    
 }
 
 function selectStyle(type, disabled) {
@@ -110,7 +99,6 @@ function selectStyle(type, disabled) {
         switch (type) {
             case 'accent':
                 return STYLES_BUTTON[2]
-                break
             default:
                 return STYLES_BUTTON[1]
         }

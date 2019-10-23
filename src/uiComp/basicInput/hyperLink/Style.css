@@ -1,0 +1,27 @@
+.hyp{
+    color: blue;
+    text-decoration: none;
+}
+.hyp:hover{
+    cursor: pointer;
+    color: rgb(0, 102, 255);
+    text-decoration: none;
+}
+.hyp:active{
+    color: blue;
+    text-decoration: underline overline;
+}
+.hyp-gene{
+    font-style: italic;
+    color: #C93A1D;
+    text-decoration: none;
+}
+.hyp-gene:hover{
+    cursor: pointer;
+    color: rgb(224, 96, 70);
+    text-decoration: none;
+}
+.hyp-gene:active{
+    color: #C93A1D;
+    text-decoration: underline overline;
+}
