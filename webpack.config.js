@@ -100,5 +100,30 @@ module.exports = [
 				}
 			]
 		}
+	},
+	{
+		mode: 'production',
+		entry: './src/uiComp/basicInput/hyperLink/HyperLink.js',
+		output: {
+			path: path.resolve('uiComp/basicInput/hyperLink/HyperLink.js'),
+			filename: 'HyperLink.js',
+			libraryTarget: 'commonjs2'
+		},
+		module: {
+			rules: [
+				{
+					test: /\.jsx?$/,
+					exclude: /(node_modules)/,
+					use: 'babel-loader'
+				},
+				{
+					test: /\.(s*)css$/,
+                    use: [ 
+                        'style-loader',
+                        'css-loader',
+                    ]
+				}
+			]
+		}
 	}
 ];
