@@ -1,4 +1,4 @@
-# DropDown Component
+# DropDown Component 0.1
 
 to import:
 ```js
