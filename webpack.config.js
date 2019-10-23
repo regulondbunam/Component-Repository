@@ -75,5 +75,30 @@ module.exports = [
 				}
 			]
 		}
+	},
+	{
+		mode: 'production',
+		entry: './src/uiComp/basicInput/buttons/Flip.js',
+		output: {
+			path: path.resolve('uiComp/basicInput/buttons'),
+			filename: 'Flip.js',
+			libraryTarget: 'commonjs2'
+		},
+		module: {
+			rules: [
+				{
+					test: /\.jsx?$/,
+					exclude: /(node_modules)/,
+					use: 'babel-loader'
+				},
+				{
+					test: /\.(s*)css$/,
+                    use: [ 
+                        'style-loader',
+                        'css-loader',
+                    ]
+				}
+			]
+		}
 	}
 ];
