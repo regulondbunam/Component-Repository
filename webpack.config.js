@@ -125,5 +125,30 @@ module.exports = [
 				}
 			]
 		}
+	},
+	{
+		mode: 'production',
+		entry: './src/uiComp/basicInput/text/Text.js',
+		output: {
+			path: path.resolve('uiComp/basicInput/text/Text.js'),
+			filename: 'Text.js',
+			libraryTarget: 'commonjs2'
+		},
+		module: {
+			rules: [
+				{
+					test: /\.jsx?$/,
+					exclude: /(node_modules)/,
+					use: 'babel-loader'
+				},
+				{
+					test: /\.(s*)css$/,
+                    use: [ 
+                        'style-loader',
+                        'css-loader',
+                    ]
+				}
+			]
+		}
 	}
 ];
