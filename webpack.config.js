@@ -175,5 +175,31 @@ module.exports = [
 				}
 			]
 		}
+	},
+	{
+		mode: 'production',
+		entry: './src/uiComp/basicInput/selectors/RadioButton.js',
+		output: {
+			path: path.resolve('uiComp/basicInput/selectors/RadioButton.js'),
+			filename: 'RadioButton.js',
+			libraryTarget: 'commonjs2'
+		},
+		module: {
+			rules: [
+				{
+					test: /\.jsx?$/,
+					exclude: /(node_modules)/,
+					use: 'babel-loader'
+				},
+				{
+					test: /\.(s*)css$/,
+                    use: [ 
+                        'style-loader',
+                        'css-loader',
+                    ]
+				}
+			]
+		}
 	}
+
 ];
