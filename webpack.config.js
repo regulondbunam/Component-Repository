@@ -103,6 +103,31 @@ module.exports = [
 	},
 	{
 		mode: 'production',
+		entry: './src/uiComp/basicInput/Buttons.js',
+		output: {
+			path: path.resolve('uiComp/basicInput'),
+			filename: 'Buttons.js',
+			libraryTarget: 'commonjs2'
+		},
+		module: {
+			rules: [
+				{
+					test: /\.jsx?$/,
+					exclude: /(node_modules)/,
+					use: 'babel-loader'
+				},
+				{
+					test: /\.(s*)css$/,
+                    use: [ 
+                        'style-loader',
+                        'css-loader',
+                    ]
+				}
+			]
+		}
+	},
+	{
+		mode: 'production',
 		entry: './src/uiComp/basicInput/hyperLink/HyperLink.js',
 		output: {
 			path: path.resolve('uiComp/basicInput/hyperLink/HyperLink.js'),
