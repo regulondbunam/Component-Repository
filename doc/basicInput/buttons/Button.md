@@ -11,7 +11,7 @@ It is the default button used in a standard way
 to Import:
 
 ```js
-  import {Button} from 'regulondb-component-repository/uiComp/basicInput/Buttons'
+  import {Button} from "regulondb-component-repository/uiComp/basicInput/Buttons"
 ```
 to use
 ```js
@@ -27,7 +27,7 @@ This is the flashy button used for the call to action.
 to Import:
 
 ```js
-  import {Button} from 'regulondb-component-repository/uiComp/basicInput/Buttons'
+  import {Button} from "regulondb-component-repository/uiComp/basicInput/Buttons"
 ```
 
 to use
@@ -41,7 +41,7 @@ to use
 to import
 
   ```js
-  import  {CircularB} from 'regulondb-component-repository/uiComp/basicInput/Buttons'
+  import  {CircularB} from "regulondb-component-repository/uiComp/basicInput/Buttons"
   ```
 
   to usue

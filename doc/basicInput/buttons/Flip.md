@@ -2,7 +2,7 @@
 
 to import:
 ```js
-  import {Flip} from 'regulondb-component-repository/uiComp/basicInput/Buttons'
+  import {Flip} from "regulondb-component-repository/uiComp/basicInput/Buttons"
 ```
 
 ## Content in Flip component

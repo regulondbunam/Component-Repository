@@ -2,7 +2,7 @@
 
 to import:
 ```js
-import {Split} from 'regulondb-component-repository/uiComp/basicInput/Buttons'
+import {Split} from "regulondb-component-repository/uiComp/basicInput/Buttons"
 ```
 
 ## Content in Split component
