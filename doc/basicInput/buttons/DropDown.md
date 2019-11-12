@@ -2,7 +2,7 @@
 
 to import:
 ```js
-  import DropDown from './uiComp/basicInput/buttons/DropDown'
+  import {DropDown} from 'regulondb-component-repository/uiComp/basicInput/Buttons'
 ```
 
 ## Content in DropDown component
