@@ -4,4 +4,4 @@ This repository is a library of user interface components in react, designed to 
 ## What Components Does the Library Contain?
 
 # UI-Components
-## to view in https://galarcon128.github.io/demo-Component-Repository/
+## https://galarcon128.github.io/RegulonDB-UI-Components/
