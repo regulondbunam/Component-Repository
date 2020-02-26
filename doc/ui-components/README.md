@@ -5,9 +5,8 @@
 Here our component sections
 
 1. Basic Input
-2. Collections
+2. Info Display
 3. RegulonDB Elements
-4. Genomic UIC
 
 
 
