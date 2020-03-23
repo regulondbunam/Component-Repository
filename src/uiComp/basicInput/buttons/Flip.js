@@ -1,68 +1,95 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import IconButton from './IconButton';
 import './Style.css';
+
+const defOrientation = 'r'
+const styleLeft = {
+    float: "left",
+    marginRight: "2px"
+}
 
 export default class Flip extends Component {
 
     handleOnClickLink = (event) => {
-        this.props.disabled
-            ? noAction()
-            : this.props.onClick(event);
+        if(this.props.active){
+            this.props.onClick(event);
+        }
     };
 
     render() {
         const {
-            href,
-            dir,
-            label
+            active,
+            label,
+            orientation,
         } = this.props;
-        let lb = label;
-        let icon;
-        switch(dir){
-            case 'left':
-                icon = 'keyboard_arrow_left'
-                if(lb === 'NEXT'){ lb = 'PREV'}
-                return (
-                    <div className='flip-box'>
-                        <a href={href} className={"circularButton flip"}  onClick={this.handleOnClickLink}>
-                        <i className="material-icons">{icon}</i>
-                        </a>
-                        <p className='flip-label'>
-                        {lb}
-                        </p>
-                    </div>
-                    
+        // eslint-disable-next-line no-unused-vars
+        let orientationIcon;
+        switch(orientation){
+            case 'l':
+                orientationIcon ='keyboard_arrow_left'
+                return(
+                    <React.Fragment>
+                        <div className={"flip"}>
+                        <IconButton active={active} style={styleLeft} icon={orientationIcon} onClick={this.handleOnClickLink}/>
+                        {label}
+                        </div>
+                    </React.Fragment>
+                )
+            case 'u':
+                orientationIcon = 'keyboard_arrow_up'
+                return(
+                    <React.Fragment>
+                        <div>
+                        <IconButton active={active} style={styleLeft} icon={orientationIcon} onClick={this.handleOnClickLink}/>
+                        {label}
+                        </div>
+                    </React.Fragment>
+                )
+            case 'd':
+                orientationIcon = 'keyboard_arrow_down'
+                return(
+                    <React.Fragment>
+                        <div>{label}</div><IconButton onClick={this.handleOnClickLink}/>
+                    </React.Fragment>
+                )
+            case 'r':
+                orientationIcon = 'keyboard_arrow_right'
+                return(
+                    <React.Fragment>
+                        <div className={"flip"}>
+                        {label}
+                        <IconButton active={active} style={styleLeft} icon={orientationIcon} onClick={this.handleOnClickLink}/>
+                        </div>
+                    </React.Fragment>
                 )
             default:
-                icon = 'keyboard_arrow_right'
-                return (
-                    <div className='flip-box'>
-                        <p className='flip-label'>
-                            {lb}
-                        </p>
-                        <a href={href} className={"circularButton flip"}  onClick={this.handleOnClickLink}>
-                        <i className="material-icons">{icon}</i>
-                        </a>
-                    </div>
+                console.warn("FipButton: no orientation selected")
+                orientationIcon = 'keyboard_arrow_right'
+                return(
+                    <React.Fragment>
+                        <div>{label}</div><IconButton/>
+                    </React.Fragment>
                 )
         }
+        
     }
 }
 
+function noAction() {
+    console.warn('Button has no activity')
+}
+
 Flip.propTypes = {
+    active: PropTypes.bool,
     label: PropTypes.string,
-    onClick: PropTypes.func,
-    href: PropTypes.string,
-    dir: PropTypes.string
+    orientation: PropTypes.string,
+    onClick: PropTypes.func
 };
 
 Flip.defaultProps = {
-    label: 'NEXT',
-    href: null,
-    onClick: noAction,
-    dir: 'right'
+    active: true,
+    label: "Next",
+    orientation: defOrientation,
+    onClick: noAction
 };
-
-function noAction() {
-    console.error('Button has no activity');
-}

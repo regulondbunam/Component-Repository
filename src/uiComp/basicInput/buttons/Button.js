@@ -1,109 +1,203 @@
+/**
+# Component (user guide)
+
+# Component name 
+	
+	[Button]
+	
+## Description  
+	
+	[This component presents the functionality of a button]
+
+## Category   
+	
+	[Visual]  
+
+## Live demo 
+	
+	[https://codesandbox.io/s/relaxed-nash-ttm51?fontsize=14]
+
+
+## Installation 
+
+	[npm install regulondb-uicomponents]
+
+## Usage 
+	
+	[example: <Button label="Button" onClick={action}/> ]
+
+## Props 
+
+  | Attribute | Type | Default | Description |
+  | --------- | ---- | ------- | ----------- |
+  |accent|boolean|false|expose an accented button|
+  |active|boolean|true|enables or disables the button|
+  |label|string|''|button label|
+  |onClick|function|noAction()|receives a function to be executed when the button is pressed|
+
+
+## Exception
+	__Category (Error, Warning or Message)__  
+	Description of the exception (if necessary)
+
+## License
+
+	[License details]
+
+## Author 
+	
+	[CCG-UNAM-RegulonDB]
+
+**/
+
+
+/**
+# Component (technical guide)
+
+## Component Type 
+
+	[pure]
+
+## Dependencies
+
+	[React, { Component },PropTypes]
+
+## States
+	
+	| Property | Value | Desctiption |
+	| -------- | ----- | ----------- |
+	|          |       |             |
+	
+
+# Function description
+
+	## [noAction]
+
+	__Description:__  
+	[this function sends the console a warning that the button does not have a designated action]
+
+	__Usage:__
+
+		```javascript
+
+		noAction;
+
+		```
+	__Scope: __
+
+	[Scope details]
+
+	__Input Parameter:__  
+		* __Param - __ __[Name]__
+		Description
+
+	__Return:__  
+		* __Type - __ __[Name]__
+        Description (if necessary)
+    
+
+    ## [selectStyle]
+
+	__Description:__  
+	[this function gives the style that the button has to show based on the parameters]
+
+	__Usage:__
+
+		```javascript
+
+		selectStyle(accent,active)
+
+		```
+	__Scope: __
+
+	[Scope details]
+
+	__Input Parameter:__  
+		* __Param - __ __[accent]__
+        Description this is a button prop accent
+        * __Param - __ __[active]__
+		Description this is a button prop active
+
+	__Return:__  
+		* __Type - __ __[StyleClass]__
+		Description the class name requiere of css
+**/
+
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Style.css';
-import { STYLES_BUTTON } from './StaticVar';
 
-let link = document.createElement('link');
+/*let link = document.createElement('link');
 link.rel = 'stylesheet';
 link.type = 'text/css'; 
 link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-document.getElementsByTagName('HEAD')[0].appendChild(link);
+document.getElementsByTagName('HEAD')[0].appendChild(link);*/
+
 
 export default class Button extends Component {
 
     handleOnClickLink = (event) => {
-        this.props.disabled
-            ? noAction(1)
-            : this.props.onClick(event);
+        if(this.props.active){
+            this.props.onClick(event);
+        }
     };
 
     render() {
         const {
-            disabled,
-            href,
-            type
+            accent,
+            active,
+            /*icon,*/
+            id,
+            label,
+            style
+            /*urlimg*/
         } = this.props;
-        return (
-            <a href={href} className={selectStyle(type, disabled)} onClick={this.handleOnClickLink}>
-                {this.props.children}
-            </a>
-        )
+
+            return (
+                <button id={id} className={selectStyle(accent,active)} onClick={this.handleOnClickLink} style={style}>
+                    {label}
+                    {this.props.children}
+                </button>
+            )  
 
     }
 }
 
+function selectStyle (accent, active) {
+    let styleClass = "button"
+    accent
+    ? styleClass += " accent"
+    : styleClass += " default"
+    active
+    ? styleClass += " "
+    : styleClass += " disabled"
+
+    return styleClass
+}
+
+function noAction() {
+    console.warn('Button has no activity')
+}
+
+
 Button.propTypes = {
-    disabled: PropTypes.bool,
-    type: PropTypes.string,
-    onClick: PropTypes.func,
-    href: PropTypes.string
+    accent: PropTypes.bool,
+    active: PropTypes.bool,
+    href: PropTypes.string,
+    icon: PropTypes.string,
+    id: PropTypes.string,
+    label: PropTypes.string,
+    urlimg: PropTypes.string,
+    onClick: PropTypes.func
 };
 
 Button.defaultProps = {
-    children: 'RegulonDB Button!!',
-    disabled: false,
-    type: 'default',
-    href: null,
+    accent:  false,
+    active: true,
+    icon: "",
+    label: "",
+    urlimg: "",
     onClick: noAction
 };
 
-export class CircularB extends Component {
-
-    handleOnClickLink = (event) => {
-        this.props.disabled
-            ? noAction(1)
-            : this.props.onClick(event);
-    };
-
-    render() {
-        const {
-            href,
-            icon,
-        } = this.props;
-        return (
-            <a href={href} className={"circularButton"}  onClick={this.handleOnClickLink}>
-                <i className="material-icons">{icon}</i>
-            </a>
-        )
-
-    }
-}
-
-CircularB.propTypes = {
-    disabled: PropTypes.bool,
-    icon: PropTypes.string,
-    onClick: PropTypes.func,
-    href: PropTypes.string
-};
-
-CircularB.defaultProps = {
-    disabled: false,
-    icon: 'sentiment_satisfied_alt',
-    href: null,
-    onClick: noAction
-};
-
-function noAction(mod) {
-    switch(mod){
-        case 1:
-            console.log('Button disabled')
-            break
-        default:
-            console.error('Button has no activity')
-    }
-    
-}
-
-function selectStyle(type, disabled) {
-    if (!disabled) {
-        switch (type) {
-            case 'accent':
-                return STYLES_BUTTON[2]
-            default:
-                return STYLES_BUTTON[1]
-        }
-    }else{
-        return STYLES_BUTTON[0]
-    }
-
-}
