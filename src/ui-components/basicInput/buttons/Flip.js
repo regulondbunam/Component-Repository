@@ -1,3 +1,101 @@
+/**
+# Component (user guide)
+
+# Component name 
+	
+	[Flip]
+	
+## Description  
+	
+	[Description Details]
+
+## Category   
+	
+	[Visual]  
+
+## Live demo 
+	
+	[]
+
+
+## Installation 
+
+	[]
+
+## Usage 
+	
+	[example: <Flip label={"Left"} orientation={'l'}/> ]
+
+## Props 
+
+| prop name   | Type     | Default    | Description                                                  |
+| ----------- | -------- | ---------- | ------------------------------------------------------------ |
+| active      | boolean  | true       | enables or disables the button                               |
+| label       | String   | "button"   | Button label                                                 |
+| orientation | String   | "r"        | Visual aspect of the Flip button you can use the terms: **r** to rigth direction button or **l** to left direction. |
+| onClick     | function | noAction() | receives a function to be executed when the press flip button |
+
+
+
+## Exception
+	__Category (Error, Warning or Message)__  
+	Description of the exception (if necessary)
+
+## License
+
+	[-]
+
+## Author 
+	
+	[CCG-UNAM-RegulonDB]
+
+**/
+
+
+/**
+# Component (technical guide)
+
+## Component Type 
+
+	[stateless]
+
+## Dependencies
+
+	[React, { Component },PropTypes, RegulonDB-uicomponents IconButton]
+
+## States
+	
+	| Property | Value | Desctiption |
+	| -------- | ----- | ----------- |
+	|          |       |             |
+	
+
+# Function description
+
+	## [noAction]
+
+	__Description:__  
+	[this function sends the console a warning that the button does not have a designated action]
+
+	__Usage:__
+
+		```javascript
+
+		noAction;
+
+		```
+	__Scope: __
+
+	[Scope details]
+
+	__Input Parameter:__  
+		* __Param - __ __[Value]__
+		Description
+
+	__Return:__  
+		* __Type - __ __[Name]__
+        Description (if necessary)
+**/
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import IconButton from './IconButton';

@@ -20,11 +20,11 @@
 
 ## Installation 
 
-	[npm install regulondb-uicomponents]
+	[-]
 
 ## Usage 
 	
-	[example: <Button label="Button" onClick={action}/> ]
+	[]
 
 ## Props 
 
