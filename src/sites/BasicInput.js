@@ -1,6 +1,6 @@
 import React from 'react';
-import Button, {IconButton, DropDown, Split, Flip} from 'C:/Users/alarc/Desktop/RegulonDB/Component-Repository/src/ui-components/basicInput/Buttons'
-
+import Button, {IconButton, DropDown, Split, Flip} from '../ui-components/basicInput/Buttons'
+import CheckBox, {RadioButton} from '../ui-components/basicInput/Selectors'
 
 const op = ["gene","GU","product","TF","Regulondb"]
 
@@ -43,6 +43,12 @@ export default function BasicInput() {
       <br/>
       <Flip label={"Right"} orientation={'r'}/>
       <h2>Selectors</h2>
+      <h3>CheckBox</h3>
+      <CheckBox/>
+      <br/>
+      <br/>
+      <br/>
+
     </div>
   );
 }
