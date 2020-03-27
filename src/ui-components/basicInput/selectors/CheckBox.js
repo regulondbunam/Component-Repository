@@ -14,7 +14,8 @@ export default class Checkbox extends React.Component {
             checked
         } = this.props
         return (
-            <label className="checkLabel">{label}
+            <label className="checkLabel">
+                <div className="checkText">{label}</div>
                 <input
                     type="checkbox"
                     checked={checked}
@@ -34,7 +35,7 @@ Checkbox.propTypes = {
 };
 
 Checkbox.defaultProps = {
-    label: 'check box',
+    label: 'checkBox',
     disabled: false,
     onChange: noAction
 };
