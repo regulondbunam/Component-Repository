@@ -1,6 +1,7 @@
 import React from 'react';
 import Button, {IconButton, DropDown, Split, Flip} from '../ui-components/basicInput/Buttons'
 import CheckBox, {RadioButton} from '../ui-components/basicInput/Selectors'
+import {InputText, PasswordInText, TextArea} from '../ui-components/basicInput/Text'
 
 const op = ["gene","GU","product","TF","Regulondb"]
 
@@ -44,7 +45,18 @@ export default function BasicInput() {
       <Flip label={"Right"} orientation={'r'}/>
       <h2>Selectors</h2>
       <h3>CheckBox</h3>
-      <CheckBox/>
+      <CheckBox id={1}/>
+      <br/>
+      <h3>RadioButton**</h3>
+      <RadioButton id={1}/>
+      <br/>
+      <h2>Input Text</h2>
+      <h3>InputText**</h3>
+      <InputText></InputText>
+      <h3>PasswordInText**</h3>
+      <PasswordInText/>
+      <h3>TextArea**</h3>
+      <TextArea></TextArea>
       <br/>
       <br/>
       <br/>

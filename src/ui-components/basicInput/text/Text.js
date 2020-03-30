@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Style.css';
 
 
-export default class InputText extends React.Component {
+export class InputText extends React.Component {
     state = {
         keyword: this.props.value
     }
