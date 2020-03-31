@@ -4,8 +4,8 @@ import './Style.css';
 
 export default class Checkbox extends React.Component {
 
-    _handleOnChange = () => {
-        this.props.onChange(this.props.id);
+    _handleOnChange = (event) => {
+        this.props.onChange(this.props.label,event.target.checked);
     }
 
     render() {
@@ -20,6 +20,7 @@ export default class Checkbox extends React.Component {
                     type="checkbox"
                     checked={checked}
                     onChange={this._handleOnChange}
+                    value={""}
                 />
                 <span className="checkmark"></span>
             </label>

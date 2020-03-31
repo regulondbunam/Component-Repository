@@ -1,6 +1,6 @@
 import React from 'react';
 import Button, {IconButton, DropDown, Split, Flip} from '../ui-components/basicInput/Buttons'
-import CheckBox, {RadioButtonGrup} from '../ui-components/basicInput/Selectors'
+import CheckBox, {RadioButtonGrup, CheckBoxGrup} from '../ui-components/basicInput/Selectors'
 import {InputText, PasswordInText, TextArea} from '../ui-components/basicInput/Text'
 
 const op = ["gene","GU","product","TF","Regulondb"]
@@ -46,9 +46,8 @@ export default function BasicInput() {
       <h2>Selectors</h2>
       <h3>CheckBox</h3>
       <CheckBox id={1}/>
-      <h3>GropBox of RadioButton</h3>
-      <br/>
-      <h3>RadioButton**</h3>
+      <CheckBoxGrup name="grupTwo" options={op} checkedOptions={[op[0],op[2]]}/>
+      <h3>RadioButtonGrup</h3>
       <RadioButtonGrup name="grupOne" options={op} checkedOption={op[0]}/>
       <br/>
       <h2>Input Text</h2>
