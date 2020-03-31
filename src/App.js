@@ -18,10 +18,7 @@ function App() {
       <Link to="/RegulonDB-webComponents"><h2>RegulonDB-webComponents</h2></Link>
       
       <Switch>
-          <Route exact path="/BasicInput">
-            <BasicInput />
-          </Route>
-        </Switch>
+      </Switch>
       </div>
     </Router>
     
