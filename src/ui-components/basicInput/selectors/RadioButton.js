@@ -4,8 +4,8 @@ import './Style.css';
 
 export default class RadioButton extends React.Component {
 
-    _onChange = () => {
-        this.props.onChange(this.props.id)
+    _onChange = (event) => {
+        this.props.onChange(this.props.label)
     }
 
     render() {
@@ -13,7 +13,7 @@ export default class RadioButton extends React.Component {
         const {
             label,
             name,
-            checked
+            checked,
         } = this.props
         return (
             <label 
@@ -33,32 +33,22 @@ export default class RadioButton extends React.Component {
 }
 
 RadioButton.propTypes = {
+    active: PropTypes.bool,
     checked: PropTypes.bool,
-    id: PropTypes.number.isRequired,
     label: PropTypes.string,
     name: PropTypes.string,
-    disabled: PropTypes.bool,
     onChange: PropTypes.func
 };
 
 RadioButton.defaultProps = {
+    active: true,
+    checked: false,
     label: 'Radio Button',
     name: 'default',
-    disabled: false,
     onChange: noAction
 };
 
 
-function noAction(mod) {
-    switch (mod) {
-        case 1:
-            console.log('RadioButton disabled')
-            break
-                   case 2:
-            //console.log('RadioButton is pressed')
-            break
-        default:
-            console.error('The RadioButton has no onchange function defined')
-    }
-
+function noAction() {
+    console.warn('The RadioButton has no onchange function defined')
 }
