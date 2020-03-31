@@ -1,8 +1,9 @@
 import React, {Component } from 'react'
 import PropTypes from 'prop-types'
+import RadioButton from './RadioButton'
 import './Style.css';
 
-export default class CheckBoxGrup extends Component {
+export default class RadioButtonGrup extends Component {
 
     constructor(props) {
         super(props)
@@ -13,7 +14,6 @@ export default class CheckBoxGrup extends Component {
 
     _onChange = (label) =>{
         this.setState({checkedLabel: label})
-        console.log(this.state.checkedLabel)
     }
     render() {
         const {
@@ -22,21 +22,20 @@ export default class CheckBoxGrup extends Component {
             name,
             options,
             onSelect,
-            styleCheckBox,
             styleGrupBox,
             title
         } = this.props
         return (
         <React.Fragment>
             {options.map((op)=>
-            <GrupOf key={op} name={name} label={op} checked={this.state.checkedLabel === op } onChange={this._onChange} ></GrupOf>
+            <RadioButton key={op} name={name} label={op} checked={this.state.checkedLabel === op } onChange={this._onChange} />
             )}
         </React.Fragment>)
     }
 
 }
 
-CheckBoxGrup.propTypes = {
+RadioButtonGrup.propTypes = {
     checkedOption: PropTypes.string,
     dropdown: PropTypes.bool,
     GrupOf: PropTypes.elementType,
@@ -47,6 +46,6 @@ CheckBoxGrup.propTypes = {
     title: PropTypes.string
 };
 
-CheckBoxGrup.defaultProps = {
+RadioButtonGrup.defaultProps = {
     checkedOption: ""
 };
