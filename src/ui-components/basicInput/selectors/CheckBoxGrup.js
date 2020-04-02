@@ -8,8 +8,10 @@ export default class CheckBoxGrup extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            checkedLabel: this.props.checkedOptions
+            checkedLabel: this.props.checkedOptions,
+            value: ""
         }
+        this._onChange = this._onChange.bind(this);
     }
 
     _onChange = (label,checked) =>{
@@ -19,7 +21,7 @@ export default class CheckBoxGrup extends Component {
             this.setState({checkedLabel: arr})
         }else{
             let indx = arr.indexOf(label)
-            console.log(indx)
+            //console.log(indx)
             arr.splice(indx,1)
             this.setState({checkedLabel: arr})
         }
@@ -38,7 +40,7 @@ export default class CheckBoxGrup extends Component {
         return (
         <React.Fragment>
             {options.map((op)=>
-            <CheckBox key={op} name={name} label={op} checked={this.state.checkedLabel.find(o => o === op) } onChange={this._onChange} />
+            <CheckBox key={op} value={this.state.value} name={name} label={op} checked={this.state.checkedLabel.find(o => o === op) } onChange={this._onChange} />
             )}
         </React.Fragment>)
     }

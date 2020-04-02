@@ -3,8 +3,15 @@ import PropTypes from 'prop-types';
 import './Style.css';
 
 export default class Checkbox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: this.props.checked};
+    
+        this._handleOnChange = this._handleOnChange.bind(this);
+      }
 
     _handleOnChange = (event) => {
+        this.setState({value: event.target.value});
         this.props.onChange(this.props.label,event.target.checked);
     }
 
@@ -20,7 +27,7 @@ export default class Checkbox extends React.Component {
                     type="checkbox"
                     checked={checked}
                     onChange={this._handleOnChange}
-                    value={""}
+                    value={this.state.value}
                 />
                 <span className="checkmark"></span>
             </label>
