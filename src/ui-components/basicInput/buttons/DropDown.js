@@ -124,7 +124,7 @@ export default class DropDown extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            expanded: this.props.expand,
+            expand: this.props.expand,
             label: this.props.label
         }
     }
@@ -132,14 +132,14 @@ export default class DropDown extends Component {
     onSelect = (event) => {
         const value = event.target.id;
         this.props.labelUpdate?this.setState({label: value}):this.setState({label: this.state.label})
-        this.setState({expanded: !this.state.expanded})
+        this.setState({expand: !this.state.expand})
         this.props.onSelect(value)
         
     }
 
     expandDrop = (event) => {
         if(this.props.active){
-            this.setState({expanded: !this.state.expanded})
+            this.setState({expand: !this.state.expand})
         }
     };
 
@@ -164,13 +164,13 @@ export default class DropDown extends Component {
                     {label}
                     <i className="material-icons">
                     {
-                    this.state.expanded
+                    expand
                     ?arrowUp
                     :arrowDown
                     }</i>
                 </Button>
                 {
-                    this.state.expanded
+                    expand
                     ?<div className={"dropBox"} onClick={this.onSelect}>
                         {
                         content.map((value)=>
