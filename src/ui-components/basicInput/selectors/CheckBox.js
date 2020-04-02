@@ -28,9 +28,12 @@
 
 ## Props 
 
-  | Attribute | Type | Default | Description |
-  | --------- | ---- | ------- | ----------- |
-  |           |      |         |             |
+  | Prop     | Type     | Default    | Description                                                  |
+| -------- | -------- | ---------- | ------------------------------------------------------------ |
+| active*  | boolean  | true       | Enables or disables the checkbox                             |
+| cheked   | boolean  | false      | check or uncheck checkbox                                    |
+| label    | String   | "checkBox" | CheckBox Label                                               |
+| onChange | function | noAction() | eceives a function to be executed when the checkBox is checked |
 
 
 
@@ -40,11 +43,11 @@
 
 ## License
 
-	[License details]
+	[MIT]
 
 ## Author 
 	
-	[Author details]
+	[CCG-UNAM-RegulonDB]
 
 **/
 
@@ -54,11 +57,11 @@
 
 ## Component Type 
 
-	[stateful, stateless, pure, HOC]
+	[stateful]
 
 ## Dependencies
 
-	[Dependencies details]
+	[React, PropTypes, Style]
 
 ## States
 	
@@ -69,16 +72,16 @@
 
 # Function description
 
-	## [function name]
+	## [noAction]
 
 	__Description:__  
-	[Description of the function]
+	[this function sends the console a warning that the button does not have a designated action]
 
 	__Usage:__
 
 		```javascript
 
-		&function(Parameters, if any);
+		noAction;
 
 		```
 	__Scope: __
@@ -91,7 +94,7 @@
 
 	__Return:__  
 		* __Type - __ __[Name]__
-		Description (if necessary)
+        Description (if necessary)
 **/
 import React from 'react'
 import PropTypes from 'prop-types';

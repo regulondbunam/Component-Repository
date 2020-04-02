@@ -30,11 +30,11 @@
 
   | Prop     | Type     | Default       | Description                                                  |
 | -------- | -------- | ------------- | ------------------------------------------------------------ |
-| active   | boolean  | true          | Enables or disables the button                               |
-| checked  | boolean  | false         | check or uncheck radio button                                |
-| label    | String   | "radioButton" | radio button label                                           |
+| active   | boolean  | true          | Enables or disables the radiobutton                               |
+| checked  | boolean  | false         | check or uncheck radiobutton                                |
+| label    | String   | "radioButton" | radiobutton label                                           |
 | name     | String   | "default"     | defines radio button groups with the name property (radio buttons with the same name belong to the same group).The name attribute is used to identify form data after it has been submitted to the server, or to reference form data |
-| onChange | function | noAction()    | receives a function to be executed when the radio button is checked |
+| onChange | function | noAction()    | receives a function to be executed when the radiobutton is checked |
 
 
 
