@@ -27,6 +27,16 @@ export default class CheckBoxGrup extends Component {
         }
         
     }
+
+    valueCheckedOptions(chekedState,option){
+        let optionCheck = chekedState.find(o => o === option)
+        if(optionCheck !== undefined){
+            return true
+        } else{
+            return false
+        }
+    }
+
     render() {
         const {
             dropdown,
@@ -40,7 +50,8 @@ export default class CheckBoxGrup extends Component {
         return (
         <React.Fragment>
             {options.map((op)=>
-            <CheckBox key={op} value={this.state.value} name={name} label={op} checked={this.state.checkedLabel.find(o => o === op) } onChange={this._onChange} />
+            
+            <CheckBox key={op} value={this.state.value} name={name} label={op} checked={this.valueCheckedOptions(this.state.checkedLabel,op)} onChange={this._onChange} />
             )}
         </React.Fragment>)
     }

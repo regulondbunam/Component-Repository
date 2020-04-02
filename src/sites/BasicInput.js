@@ -45,7 +45,7 @@ export default function BasicInput() {
       <Flip label={"Right"} orientation={'r'}/>
       <h2>Selectors</h2>
       <h3>CheckBox</h3>
-      <CheckBox id={1}/>
+      <CheckBox />
       <CheckBoxGrup name="grupTwo" options={op} checkedOptions={[op[0],op[2]]}/>
       <h3>RadioButtonGrup</h3>
       <RadioButtonGrup name="grupOne" options={op} checkedOption={op[0]}/>
