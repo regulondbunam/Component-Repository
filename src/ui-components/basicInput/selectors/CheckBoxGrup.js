@@ -39,16 +39,15 @@ export default class CheckBoxGrup extends Component {
 
     render() {
         const {
-            dropdown,
-            GrupOf,
+            /*dropdown,*/
             name,
             options,
-            onSelect,
-            styleGrupBox,
+            /*style,*/
             title
         } = this.props
         return (
         <React.Fragment>
+            {title}
             {options.map((op)=>
             
             <CheckBox key={op} value={this.state.value} name={name} label={op} checked={this.valueCheckedOptions(this.state.checkedLabel,op)} onChange={this._onChange} />
@@ -65,7 +64,7 @@ CheckBoxGrup.propTypes = {
     name: PropTypes.string,
     options: PropTypes.array,
     onChange: PropTypes.func,
-    styleGrupBox: PropTypes.object,
+    style: PropTypes.object,
     title: PropTypes.string
 };
 
