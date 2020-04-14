@@ -15,18 +15,18 @@ export default class RadioButtonGrup extends Component {
     _onChange = (label) =>{
         this.setState({checkedLabel: label})
     }
+
     render() {
         const {
-            dropdown,
-            GrupOf,
+            /*dropdown,*/
             name,
             options,
-            onSelect,
-            styleGrupBox,
+            /*styleGrupBox,*/
             title
         } = this.props
         return (
         <React.Fragment>
+            {title}
             {options.map((op)=>
             <RadioButton key={op} name={name} label={op} checked={this.state.checkedLabel === op } onChange={this._onChange} />
             )}
@@ -35,10 +35,12 @@ export default class RadioButtonGrup extends Component {
 
 }
 
+function noAction(){
+
+}
+
 RadioButtonGrup.propTypes = {
-    checkedOption: PropTypes.string,
     dropdown: PropTypes.bool,
-    GrupOf: PropTypes.elementType,
     name: PropTypes.string,
     options: PropTypes.array,
     onChange: PropTypes.func,
@@ -47,5 +49,10 @@ RadioButtonGrup.propTypes = {
 };
 
 RadioButtonGrup.defaultProps = {
-    checkedOption: ""
+    dropdown: false,
+    name: "",
+    options: [],
+    onChange: noAction,
+    styleGrupBox: {},
+    title: ""
 };
