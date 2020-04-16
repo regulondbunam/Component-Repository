@@ -1,2 +1,3 @@
 import TextBox from './text/TextBox'
-export{TextBox}
+import TextPassword from './text/TextPassword'
+export{TextBox, TextPassword}

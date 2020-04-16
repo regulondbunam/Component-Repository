@@ -5,48 +5,7 @@ import './Style.css';
 
 
 
-export class PasswordInText extends React.Component {
-    state = {
-        keyword: this.props.value
-    }
 
-    static getDerivedStateFromProps(props, state) {
-        return {
-            keyword: props.value
-        }
-    }
-
-    _inputChangedHandler(event) {
-        this.setState({ keyword: event.target.value })
-        this.props.onChangeText(event.target.value)
-    }
-
-    render() {
-        const {
-            placeholder = "password"
-        } = this.props
-        return (
-            <input
-                type="password"
-                className='InText'
-                placeholder={placeholder}
-                value={this.state.keyword}
-                onChange={(event) => this._inputChangedHandler(event)}
-            >
-            </input>
-        )
-    }
-}
-
-PasswordInText.propTypes = {
-    disabled: PropTypes.bool,
-    onChangeText: PropTypes.func
-};
-
-PasswordInText.defaultProps = {
-    disabled: false,
-    onChangeText: noAction
-};
 
 export class TextArea extends React.Component {
 

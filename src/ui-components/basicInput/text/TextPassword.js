@@ -96,3 +96,59 @@
 		* __Type - __ __[Name]__
 		Description (if necessary)
 **/
+import React, {Component} from 'react'
+import PropTypes from 'prop-types';
+import './Style.css';
+
+export default class TextPassword extends Component {
+    state = {
+        keyword: this.props.value
+    }
+
+    _inputChangedHandler(event) {
+        this.setState({ keyword: event.target.value })
+        this.props.onChangeText(event.target.value)
+    }
+
+    render() {
+        const {
+            placeholder = "password"
+		} = this.props
+		const {
+			keyword
+		} = this.state
+        return (
+            <input
+                type="password"
+                className='textBox'
+                placeholder={placeholder}
+                value={keyword}
+                onChange={(event) => this._inputChangedHandler(event)}
+            >
+            </input>
+        )
+    }
+}
+
+TextPassword.propTypes = {
+    disabled: PropTypes.bool,
+	onChangeText: PropTypes.func,
+	seed: PropTypes.number
+};
+
+TextPassword.defaultProps = {
+    disabled: false,
+	onChangeText: noAction,
+	seed: 0
+};
+
+function noAction(mod) {
+    switch (mod) {
+        case 1:
+            console.log('AreaText disabled')
+            break
+        default:
+            console.error('The AreaText State is undefined')
+    }
+
+}

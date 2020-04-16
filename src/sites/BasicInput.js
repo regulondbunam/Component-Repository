@@ -1,7 +1,7 @@
 import React from 'react';
 import Button, {IconButton, DropDown, Split, Flip} from '../ui-components/basicInput/Buttons'
 import CheckBox, {RadioButtonGrup, CheckBoxGrup} from '../ui-components/basicInput/Selectors'
-import {TextBox} from '../ui-components/basicInput/Text'
+import {TextBox, TextPassword} from '../ui-components/basicInput/Text'
 
 const op = ["gene","GU","product","TF","Regulondb"]
 
@@ -53,7 +53,8 @@ export default function BasicInput() {
       <h2>Input Text</h2>
       <h3>TextBox</h3>
       <TextBox />
-      <h3>PasswordInText**</h3>
+      <h3>Password Text</h3>
+      <TextPassword/>
       <h3>TextArea**</h3>
       <br/>
       <br/>
