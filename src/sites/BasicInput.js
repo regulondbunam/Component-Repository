@@ -2,6 +2,7 @@ import React from 'react';
 import Button, {IconButton, DropDown, Split, Flip} from '../ui-components/basicInput/Buttons'
 import CheckBox, {RadioButtonGrup, CheckBoxGrup} from '../ui-components/basicInput/Selectors'
 import {TextBox, TextPassword, TextArea} from '../ui-components/basicInput/Text'
+import {HyperLink} from '../ui-components/basicInput/HyperLink'
 
 const op = ["gene","GU","product","TF","Regulondb"]
 
@@ -55,12 +56,20 @@ export default function BasicInput() {
       <TextBox />
       <h3>Password Text</h3>
       <TextPassword/>
-      <h3>TextArea**</h3>
+      <h3>TextArea</h3>
       <TextArea/>
       <br/>
+      <h3>HyperLink*</h3>
+      <HyperLink>this is a simple Link</HyperLink>
       <br/>
       <br/>
-
+      this is a Link GENE
+      <br/>
+      <HyperLink type={'gene'}>AraC</HyperLink>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
   );
 }
