@@ -123,7 +123,7 @@ export default class TextBox extends React.Component {
         return (
             <input
                 type="text"
-                className='InText'
+                className='textBox'
                 placeholder={placeholder}
                 value={this.state.keyword}
                 onChange={(event) => this._inputChangedHandler(event)}
