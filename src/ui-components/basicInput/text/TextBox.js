@@ -96,19 +96,13 @@
 		* __Type - __ __[Name]__
 		Description (if necessary)
 **/
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import './Style.css';
 
-export default class TextBox extends React.Component {
+export default class TextBox extends Component {
     state = {
         keyword: this.props.value
-    }
-
-    static getDerivedStateFromProps(props, state) {
-        return {
-            keyword: props.value
-        }
     }
 
     _inputChangedHandler(event) {
@@ -119,13 +113,16 @@ export default class TextBox extends React.Component {
     render() {
         const {
             placeholder
-        } = this.props
+		} = this.props
+		const {
+			keyword
+		} = this.state
         return (
             <input
                 type="text"
                 className='textBox'
                 placeholder={placeholder}
-                value={this.state.keyword}
+                value={keyword}
                 onChange={(event) => this._inputChangedHandler(event)}
             >
             </input>
@@ -136,15 +133,17 @@ export default class TextBox extends React.Component {
 TextBox.propTypes = {
     disabled: PropTypes.bool,
 	onChangeText: PropTypes.func,
-	placeholder: PropTypes.string
+	placeholder: PropTypes.string,
+	value: PropTypes.string
 }
 
 TextBox.defaultProps = {
     disabled: false,
 	onChangeText: noAction,
-	placeholder: "type here"
+	placeholder: "type here",
+	value: ""
 };
 
-function noAction(mod) {
-    console.error('The AreaText State is undefined')
+function noAction() {
+    console.warn('The AreaText State is undefined')
 }

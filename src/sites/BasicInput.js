@@ -52,7 +52,7 @@ export default function BasicInput() {
       <br/>
       <h2>Input Text</h2>
       <h3>TextBox</h3>
-      <TextBox/>
+      <TextBox />
       <h3>PasswordInText**</h3>
       <h3>TextArea**</h3>
       <br/>
