@@ -96,3 +96,55 @@
 		* __Type - __ __[Name]__
 		Description (if necessary)
 **/
+import React from 'react'
+import PropTypes from 'prop-types';
+import './Style.css';
+
+export default class TextBox extends React.Component {
+    state = {
+        keyword: this.props.value
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        return {
+            keyword: props.value
+        }
+    }
+
+    _inputChangedHandler(event) {
+        this.setState({ keyword: event.target.value })
+        this.props.onChangeText(event.target.value)
+    }
+
+    render() {
+        const {
+            placeholder
+        } = this.props
+        return (
+            <input
+                type="text"
+                className='InText'
+                placeholder={placeholder}
+                value={this.state.keyword}
+                onChange={(event) => this._inputChangedHandler(event)}
+            >
+            </input>
+        )
+    }
+}
+
+TextBox.propTypes = {
+    disabled: PropTypes.bool,
+	onChangeText: PropTypes.func,
+	placeholder: PropTypes.string
+}
+
+TextBox.defaultProps = {
+    disabled: false,
+	onChangeText: noAction,
+	placeholder: "type here"
+};
+
+function noAction(mod) {
+    console.error('The AreaText State is undefined')
+}
