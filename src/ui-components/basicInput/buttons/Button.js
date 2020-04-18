@@ -42,7 +42,7 @@
 
 ## License
 
-	[License details]
+	[MIT]
 
 ## Author 
 	
