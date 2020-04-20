@@ -2,6 +2,6 @@
 
     border: solid 1px #1f3d4e;
     display: flex;
-  flex-wrap: wrap;
-  align-content:center
+    align-items: center;
+    justify-content: right;
 }

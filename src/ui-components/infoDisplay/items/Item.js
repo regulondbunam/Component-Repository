@@ -111,6 +111,14 @@ const models = {
 	dark:"#d5d5d7"
 }
 
+const aligns = {
+	center: "center",
+	left: "flex-start",
+	right: "flex-end",
+	spaceBetween :"space-between",
+	
+}
+
 export default class Item extends Component {
 
 	setModel(key){
@@ -119,6 +127,14 @@ export default class Item extends Component {
 			return color
 		}
 		return(models.clear)
+	}
+
+	setAlign(key){
+		let aling = aligns[key]
+		if(aling!==undefined){
+			return aling
+		}
+		return(aligns.left)
 	}
 
     render() {
@@ -132,13 +148,18 @@ export default class Item extends Component {
 		} = this.props;
 
 		const masterStyle = Object.assign(
-			{height: height,width: width,backgroundColor: this.setModel(model)},
+			{
+				height: height,
+				width: width,
+				backgroundColor: this.setModel(model),
+				justifyContent: this.setAlign(align)
+			},
 			style
 			) 
 
         return (
             <div className="item" style={masterStyle}>
-				{data}{align}
+				{data}
 			</div>
         )
 
@@ -148,17 +169,17 @@ export default class Item extends Component {
 Item.propTypes = {
     align: PropTypes.string,
 	data: PropTypes.string,
-	height: PropTypes.number,
+	height: PropTypes.string,
 	model: PropTypes.string,
     style: PropTypes.object,
-    width: PropTypes.number,
+    width: PropTypes.string,
 };
 
 Item.defaultProps = {
     align: "left",
 	data: "hola",
-	height: 44,
+	height: "auto",
 	model: "clear",
     style: {},
-    width: 400,
+    width: "400px",
 };
