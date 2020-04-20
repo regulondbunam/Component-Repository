@@ -151,7 +151,7 @@ TextArea.defaultProps = {
 	onChangeText: noAction,
 	rows:5,
 	style: {width: "300px", height: "160px"},
-	value: PropTypes.string
+	value: ""
 };
 
 function noAction(mod) {

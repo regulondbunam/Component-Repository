@@ -103,20 +103,43 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Style.css';
 
+// ["clear", "accent", "accent_ligth", "dark"]
+const models = {
+	clear: "#ffffff",
+	accent: "#72a7c7",
+	accent_ligth: "#d5e2ea",
+	dark:"#d5d5d7"
+}
+
 export default class Item extends Component {
+
+	setModel(key){
+		let color = models[key]
+		if(color!==undefined){
+			return color
+		}
+		return(models.clear)
+	}
+
     render() {
         const {
             align,
 			data,
-			form,
-    		height,
+			height,
+			model,
     		style,
     		width,
-        } = this.props;
-        return (
-            <React.Fragment>
+		} = this.props;
 
-			</React.Fragment>
+		const masterStyle = Object.assign(
+			{height: height,width: width,backgroundColor: this.setModel(model)},
+			style
+			) 
+
+        return (
+            <div className="item" style={masterStyle}>
+				{data}{align}
+			</div>
         )
 
     }
@@ -125,17 +148,17 @@ export default class Item extends Component {
 Item.propTypes = {
     align: PropTypes.string,
 	data: PropTypes.string,
-	form: PropTypes.string,
-    height: PropTypes.number,
+	height: PropTypes.number,
+	model: PropTypes.string,
     style: PropTypes.object,
     width: PropTypes.number,
 };
 
 Item.defaultProps = {
     align: "left",
-	data: "",
-	form: "line",
-    height: "44",
+	data: "hola",
+	height: 44,
+	model: "clear",
     style: {},
     width: 400,
 };
