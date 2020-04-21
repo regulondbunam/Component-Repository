@@ -3,7 +3,7 @@
 
 # Component name 
 	
-	[Item]
+	[Table]
 	
 ## Description  
 	
@@ -11,7 +11,7 @@
 
 ## Category   
 	
-	[Visual]  
+	[Visual/Structural]  
 
 ## Live demo 
 	
@@ -94,3 +94,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Style.css';
+
+export default class Table extends Component {
+
+
+
+    render() {
+
+        return (
+            <div>
+
+			</div>
+        )
+
+    }
+}
+
+Table.propTypes = {
+    columnStyle: PropTypes.object,
+    data: PropTypes.object,
+    headStyle: PropTypes.object,
+    name: PropTypes.string,
+    rowStyle: PropTypes.object,
+    type: PropTypes.string
+}
