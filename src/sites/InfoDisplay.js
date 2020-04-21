@@ -15,6 +15,7 @@ export default function BasicInput() {
           <Item model="accent_ligth"/>
           <h3>dark</h3>
           <Item model="dark"/>
+          <h2>Tables</h2>
           <br/>
           <br/>
           <br/>

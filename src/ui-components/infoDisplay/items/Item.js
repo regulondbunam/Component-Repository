@@ -175,8 +175,8 @@ Item.propTypes = {
 
 Item.defaultProps = {
     align: "left",
-	data: "hola",
-	height: "auto",
+	data: "",
+	height: "44px",
 	model: "clear",
     style: {},
     width: "400px",
