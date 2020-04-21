@@ -32,10 +32,10 @@
 | ------ | ------- | --------- | ----------- |
 | align  | string  | "left"    |             |
 | data   | string  | ""        |             |
-| height | numeric | 44        |             |
+| height | string  | "auto"    |             |
 | style  | object  | {}        |             |
-| type   | string  | "default" |             |
-| width  | numeric | 400       |             |
+| model  | string  | "clear"   |             |
+| width  | string  | "400px    |             |
 
 
 
@@ -115,8 +115,6 @@ const aligns = {
 	center: "center",
 	left: "flex-start",
 	right: "flex-end",
-	spaceBetween :"space-between",
-	
 }
 
 export default class Item extends Component {
