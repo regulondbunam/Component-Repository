@@ -138,7 +138,7 @@ export default class Item extends Component {
     render() {
         const {
             align,
-			data,
+			name,
 			height,
 			model,
     		style,
@@ -156,8 +156,8 @@ export default class Item extends Component {
 			) 
 
         return (
-            <div className="item" style={masterStyle}>
-				{data}
+            <div id={name} className="item" style={masterStyle}>
+				{this.props.children}
 			</div>
         )
 
@@ -166,7 +166,7 @@ export default class Item extends Component {
 
 Item.propTypes = {
     align: PropTypes.string,
-	data: PropTypes.string,
+	name: PropTypes.string,
 	height: PropTypes.string,
 	model: PropTypes.string,
     style: PropTypes.object,
@@ -175,7 +175,7 @@ Item.propTypes = {
 
 Item.defaultProps = {
     align: "left",
-	data: "",
+	name: "",
 	height: "44px",
 	model: "clear",
     style: {},
