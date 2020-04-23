@@ -105,7 +105,7 @@ import './Style.css';
 
 // ["clear", "accent", "accent_ligth", "dark"]
 const models = {
-	clear: "#ffffff",
+	clear: "#f4f5f5",
 	accent: "#72a7c7",
 	accent_ligth: "#d5e2ea",
 	dark:"#d5d5d7"
@@ -176,7 +176,7 @@ Item.propTypes = {
 Item.defaultProps = {
     align: "left",
 	name: "",
-	height: "44px",
+	height: "30px",
 	model: "clear",
     style: {},
     width: "400px",

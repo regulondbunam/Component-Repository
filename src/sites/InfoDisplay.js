@@ -25,7 +25,7 @@ export default function BasicInput() {
   )
 }
 
-const geneInfo = [{
+const geneInfo = {
   "lri": "RDBECOLIGN00001",
   "organism": "ECK12",
   "name": "fimB",
@@ -39,7 +39,7 @@ const geneInfo = [{
   "centisomePosition": 97.83062,
   "note": "<br><i>fimB</i> transcription is regulated by growth phase and its repression require the alternative sigma factor, RpoS during enter stationary phase. Although the mechanism by which RpoS achieves negative control is unknown it is possible that the effect on <i>fimB</i> is exerted indirectly |CITS:[9108285]|.<br>By making use of microarray analysis, Constantinidou et al |CITS: [16377617]| concluded that FNR represses  <i>fimB</i> gene expression, but it is not know which of the three promoters (<i>fimB</i>p1, <i>fimB</i>p2, <i>fimB</i>p3) is affected. They also identified a putative FNR binding site upstream of the gene, but the sequence was not shown.",
   "type": "gene"
-}]
+}
 
 const externalCrossReferences = [{
   "name": "String",

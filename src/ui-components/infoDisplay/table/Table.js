@@ -145,21 +145,7 @@ export default class Table extends Component {
 		}
 	}
 
-	getHeader = function () {
-		var keys = this.getKeys();
-		return keys.map((key, index) => {
-			return <th key={key}>{key.toUpperCase()}</th>
-		})
-	}
-
-	getRowsData = function () {
-		var items = this.props.data;
-		console.log(items)
-		var keys = this.getKeys();
-		return items.map((row, index) => {
-			return <tr key={index}><RenderRow key={index} data={row} keys={keys} /></tr>
-		})
-	}
+	
 
 	render() {
 		const {
@@ -168,7 +154,7 @@ export default class Table extends Component {
 			name
 		} = this.props
 		const displayType = this.setup_deployment(Array.isArray(data), deployment_type)
-		const display = displayVertical(this.getHeader(), this.getRowsData())
+		const display = displayVertical(name,data)
 		return (
 			<React.Fragment>
 				{display}
@@ -178,21 +164,28 @@ export default class Table extends Component {
 	}
 }
 
-const RenderRow = (props) => {
-	return props.keys.map((key, index) => {
-		return <td key={props.data[key]}>{props.data[key]}</td>
+const RenderRowVertial = (props) => {
+	let row = props.data
+	console.log(row)
+	return row.map((key, index) => {
+		return <td key={index} style={{paddingLeft: "20px"}}>{key}</td>
 	})
 }
 
-function displayVertical(header,rowsData) {
+function displayVertical(name,data) {
 	return (
 		<div>
-			<table>
+			<table className="tableComponent">
 				<thead>
-					<tr>{header}</tr>
+					<tr>
+				<th colSpan="3"><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
+				</tr>
 				</thead>
 				<tbody>
-					{rowsData}
+					{Object.keys(data).map((key, index) => {
+				const row = ["",key,data[key]]
+				return <tr key={index}><RenderRowVertial data={row}/></tr>
+			})}
 				</tbody>
 			</table>
 		</div>
@@ -202,6 +195,14 @@ function displayHorizontal(data) {
 
 }
 function displayVerticalR(data) { }
+
+const thStyle = {
+	fontSize: "30px", 
+	fontFamily: "arial",
+	paddingLeft: "20px",
+	paddingTop: "5px",
+	paddingBottom: "5px"
+}
 
 
 Table.propTypes = {
@@ -226,3 +227,23 @@ Table.defaultProps = {
 	rowStyle: {},
 	type: "default"
 }
+
+/**
+ * getRowsData = function () {
+		var items = this.props.data;
+		console.log(items)
+		var keys = this.getKeys();
+		if(Array.isArray(items)){
+			return items.map((row, index) => {
+				return <tr key={index}><RenderRow key={index} data={row} keys={keys} /></tr>
+			})
+		}else{
+			return Object.keys(items).map((row, index) => {
+				row = items[row]
+				console.log(index+" i "+row)
+				return <tr key={index}><RenderRow key={index} data={row} keys={keys} /></tr>
+			})
+		}
+		
+	}
+ */
