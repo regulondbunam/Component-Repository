@@ -92,8 +92,10 @@
 		Description (if necessary)
 **/
 import React, { Component } from 'react';
+import Popup from 'react-popup';
 import PropTypes from 'prop-types';
 import Item from '../items/Item'
+
 import './Style.css';
 
 const deployments = {
@@ -164,12 +166,25 @@ export default class Table extends Component {
 	}
 }
 
-const RenderRowVertial = (props) => {
-	let row = props.data
+function RenderRowVertial (row) {
 	console.log(row)
 	return row.map((key, index) => {
-		return <td key={index} style={{paddingLeft: "20px"}}>{key}</td>
+		if(key.length>20){
+			key = ShowInfo(key)
+		}
+		return <td key={index} style={{paddingLeft: "20px"}}>{
+			key
+			}</td>
 	})
+}
+
+function ShowInfo (info) {
+	
+	return(
+		<div>
+			<p style={{fontSize: '2px'}}>{info}</p>
+		</div>
+	)
 }
 
 function displayVertical(name,data) {
@@ -183,8 +198,8 @@ function displayVertical(name,data) {
 				</thead>
 				<tbody>
 					{Object.keys(data).map((key, index) => {
-				const row = ["",key,data[key]]
-				return <tr key={index}><RenderRowVertial data={row}/></tr>
+				const row = RenderRowVertial([key,data[key]])
+					return <tr key={index}>{row}</tr>
 			})}
 				</tbody>
 			</table>
