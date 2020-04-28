@@ -167,21 +167,19 @@ export default class Table extends Component {
 }
 
 function RenderRowVertial (row) {
-	console.log(row)
-	return row.map((key, index) => {
-		if(key.length>20){
-			key = ShowInfo(key)
+	return row.map((info, index) => {
+		if(info.length>30){
+			info = ShowInfo(row[0],info)
 		}
 		return <td key={index} style={{paddingLeft: "20px"}}>{
-			key
+			info
 			}</td>
 	})
 }
 
-function ShowInfo (info) {
-	
+function ShowInfo (key, info) {
 	return(
-		
+		<Modal title={"view: "+key} info={info}></Modal>
 	)
 }
 
