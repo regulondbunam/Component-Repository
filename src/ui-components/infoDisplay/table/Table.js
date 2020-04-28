@@ -92,7 +92,6 @@
 		Description (if necessary)
 **/
 import React, { Component } from 'react';
-import Popup from 'react-popup';
 import PropTypes from 'prop-types';
 import Item from '../items/Item'
 
