@@ -13,8 +13,11 @@ export default class Modal extends Component {
             title,
         } = this.props
         return (
-            <div className="ModalComponent">
+            <div className="modalComponent">
+                <div className="modalComponentContent">
                 {info}
+                </div>
+                
             </div>
         )
 
@@ -26,13 +29,14 @@ function noAction(){
 }
 
 Modal.proTypes = {
+    collapsed: PropTypes.bool,
     info: PropTypes.string,
     getValue: PropTypes.func,
     title: PropTypes.string,
 }
 
 Modal.defaultProps ={
-    info: "",
+    info: "info",
     getValue: noAction,
     title: ""
 }

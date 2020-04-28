@@ -94,6 +94,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Item from '../items/Item'
+import Modal from '../Modal/Modal'
 
 import './Style.css';
 
@@ -180,9 +181,7 @@ function RenderRowVertial (row) {
 function ShowInfo (info) {
 	
 	return(
-		<div>
-			<p style={{fontSize: '2px'}}>{info}</p>
-		</div>
+		
 	)
 }
 
