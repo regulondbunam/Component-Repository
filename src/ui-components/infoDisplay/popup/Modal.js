@@ -4,7 +4,7 @@ import Item from '../items/Item'
 
 import './Style.css';
 
-export default class Popup extends Component {
+export default class Modal extends Component {
     render() {
         const {
             buttons,
@@ -13,9 +13,9 @@ export default class Popup extends Component {
             title,
         } = this.props
         return (
-            <React.Fragment>
-                {display}
-            </React.Fragment>
+            <div className="ModalComponent">
+                {info}
+            </div>
         )
 
     }
@@ -25,13 +25,13 @@ function noAction(){
 
 }
 
-Popup.proTypes = {
+Modal.proTypes = {
     info: PropTypes.string,
     getValue: PropTypes.func,
     title: PropTypes.string,
 }
 
-Popup.defaultProps ={
+Modal.defaultProps ={
     info: "",
     getValue: noAction,
     title: ""
