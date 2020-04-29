@@ -139,9 +139,9 @@ export default class Table extends Component {
 		return 'v'
 	}
 
-	getKeys = function(){
+	getKeys = function () {
 		return Object.keys(this.props.data[0]);
-		}
+	}
 
 	getHeader = function () {
 		var keys = this.getKeys();
@@ -172,7 +172,7 @@ export default class Table extends Component {
 				display = displayVertical(name, data)
 				break
 			case 'h':
-				display = displayHorizontal(this.getHeader(),this.getRowsData())
+				display = displayHorizontal(name,this.getHeader(), this.getRowsData())
 				break
 			default:
 				console.error("NO TABLE SUPORT")
@@ -189,7 +189,9 @@ export default class Table extends Component {
 
 const RenderRow = (props) => {
 	return props.keys.map((key, index) => {
-		return <td key={props.data[key]}>{props.data[key]}</td>
+		return <td key={props.data[key]}>
+			{props.data[key]}
+		</td>
 	})
 }
 
@@ -229,11 +231,14 @@ function displayVertical(name, data) {
 		</div>
 	)
 }
-function displayHorizontal(getHeader, getRowsData) {
+function displayHorizontal(name,getHeader, getRowsData) {
 	return (
 		<div>
-			<table>
+			<table className="tableComponent">
 				<thead>
+					<tr>
+						<th colSpan="3"><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
+					</tr>
 					<tr>{getHeader}</tr>
 				</thead>
 				<tbody>
