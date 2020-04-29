@@ -112,7 +112,7 @@ export default class TextPassword extends Component {
 
     render() {
         const {
-            placeholder = "password"
+            placeholder
 		} = this.props
 		const {
 			keyword
@@ -142,13 +142,6 @@ TextPassword.defaultProps = {
 	seed: 0
 };
 
-function noAction(mod) {
-    switch (mod) {
-        case 1:
-            console.log('AreaText disabled')
-            break
-        default:
-            console.error('The AreaText State is undefined')
-    }
-
+function noAction() {
+    console.warn('The AreaText State is undefined')
 }

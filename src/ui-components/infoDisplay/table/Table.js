@@ -139,15 +139,25 @@ export default class Table extends Component {
 		return 'v'
 	}
 
-	getKeys = function () {
-		if(Array.isArray(this.props.data)){
-			return Object.keys(this.props.data[0])
-		}else{
-			return Object.keys(this.props.data)
+	getKeys = function(){
+		return Object.keys(this.props.data[0]);
 		}
+
+	getHeader = function () {
+		var keys = this.getKeys();
+		return keys.map((key, index) => {
+			return <th key={key}>{key.toUpperCase()}</th>
+		})
 	}
 
-	
+	getRowsData = function () {
+		var items = this.props.data;
+		var keys = this.getKeys();
+		return items.map((row, index) => {
+			return <tr key={index}><RenderRow key={index} data={row} keys={keys} /></tr>
+		})
+	}
+
 
 	render() {
 		const {
@@ -156,7 +166,18 @@ export default class Table extends Component {
 			name
 		} = this.props
 		const displayType = this.setup_deployment(Array.isArray(data), deployment_type)
-		const display = displayVertical(name,data)
+		let display
+		switch (displayType) {
+			case 'v':
+				display = displayVertical(name, data)
+				break
+			case 'h':
+				display = displayHorizontal(this.getHeader(),this.getRowsData())
+				break
+			default:
+				console.error("NO TABLE SUPORT")
+		}
+		console.log(displayType)
 		return (
 			<React.Fragment>
 				{display}
@@ -166,49 +187,66 @@ export default class Table extends Component {
 	}
 }
 
-function RenderRowVertial (row) {
-	return row.map((info, index) => {
-		if(info.length>30){
-			info = ShowInfo(row[0],info)
-		}
-		return <td key={index} style={{paddingLeft: "20px"}}>{
-			info
-			}</td>
+const RenderRow = (props) => {
+	return props.keys.map((key, index) => {
+		return <td key={props.data[key]}>{props.data[key]}</td>
 	})
 }
 
-function ShowInfo (key, info) {
-	return(
-		<Modal title={"view: "+key} info={info}></Modal>
+function RenderRowVertial(row) {
+	return row.map((info, index) => {
+		if (info.length > 30) {
+			info = ShowInfo(row[0], info)
+		}
+		return <td key={index} style={{ paddingLeft: "20px" }}>{
+			info
+		}</td>
+	})
+}
+
+function ShowInfo(key, info) {
+	return (
+		<Modal title={"view: " + key} info={info}></Modal>
 	)
 }
 
-function displayVertical(name,data) {
+function displayVertical(name, data) {
 	return (
 		<div>
 			<table className="tableComponent">
 				<thead>
 					<tr>
-				<th colSpan="3"><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
-				</tr>
+						<th colSpan="3"><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
+					</tr>
 				</thead>
 				<tbody>
 					{Object.keys(data).map((key, index) => {
-				const row = RenderRowVertial([key,data[key]])
-					return <tr key={index}>{row}</tr>
-			})}
+						const row = RenderRowVertial([key, data[key]])
+						return <tr key={index}>{row}</tr>
+					})}
 				</tbody>
 			</table>
 		</div>
 	)
 }
-function displayHorizontal(data) {
-
+function displayHorizontal(getHeader, getRowsData) {
+	return (
+		<div>
+			<table>
+				<thead>
+					<tr>{getHeader}</tr>
+				</thead>
+				<tbody>
+					{getRowsData}
+				</tbody>
+			</table>
+		</div>
+	)
 }
 function displayVerticalR(data) { }
 
 const thStyle = {
-	fontSize: "30px", 
+	fontSize: "30px",
 	fontFamily: "arial",
 	paddingLeft: "20px",
 	paddingTop: "5px",
@@ -255,6 +293,6 @@ Table.defaultProps = {
 				return <tr key={index}><RenderRow key={index} data={row} keys={keys} /></tr>
 			})
 		}
-		
+
 	}
  */

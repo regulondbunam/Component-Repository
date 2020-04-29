@@ -19,11 +19,15 @@ export default function BasicInput() {
           <h2>Tables</h2>
           <Table name={geneInfo.name} data={geneInfo}/>
           <br/>
+          <Table name={"Reference"} data={externalCrossReferences}/>
           <br/>
           <br/>
       </div>
   )
 }
+/* 
+
+*/
 
 const geneInfo = {
   "lri": "RDBECOLIGN00001",
