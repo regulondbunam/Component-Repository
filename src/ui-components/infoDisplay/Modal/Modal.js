@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Item from '../items/Item'
-import {HyperLink} from '../../basicInput/HyperLink'
+import { HyperLink } from '../../basicInput/HyperLink'
 
 import './Style.css';
 
@@ -11,12 +11,14 @@ export default class Modal extends Component {
         collapsed: this.props.collapsed
     }
 
-    _onCollapsed = () =>{
-        this.setState({collapsed: !this.state.collapsed})
+    _onCollapsed = (event) => {
+        if (event.target.className !== "modalComponentContent") { 
+            this.setState({ collapsed: !this.state.collapsed }) 
+        }
     }
 
     collapsedModal = (title) => {
-        return(
+        return (
             <HyperLink onClick={this._onCollapsed}>{title}</HyperLink>
         )
     }
@@ -25,11 +27,11 @@ export default class Modal extends Component {
 
     }
     displayModal = (info) => {
-        return(
-                <div className="modalComponent" onClick={this._onCollapsed}>
-                <div dangerouslySetInnerHTML={{__html: info}} className="modalComponentContent">
+        return (
+            <div className="modalComponent" onClick={this._onCollapsed}>
+                <div dangerouslySetInnerHTML={{ __html: info }} className="modalComponentContent" onClick={noAction}>
                 </div>
-                </div>
+            </div>
         )
     }
 
@@ -46,10 +48,10 @@ export default class Modal extends Component {
         return (
             <React.Fragment>
                 {
-                collapsed
-                    ?this.collapsedModal(title)
-                    :this.displayModal(info)
-            }
+                    collapsed
+                        ? this.collapsedModal(title)
+                        : this.displayModal(info)
+                }
             </React.Fragment>
         )
 
@@ -57,7 +59,7 @@ export default class Modal extends Component {
 }
 
 
-function noAction(){
+function noAction() {
 
 }
 
@@ -69,7 +71,7 @@ Modal.proTypes = {
     title: PropTypes.string,
 }
 
-Modal.defaultProps ={
+Modal.defaultProps = {
     collapsed: true,
     info: "info",
     getValue: noAction,
