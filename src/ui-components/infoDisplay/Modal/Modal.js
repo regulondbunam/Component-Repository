@@ -21,12 +21,14 @@ export default class Modal extends Component {
         )
     }
 
+    noAction = () => {
+
+    }
     displayModal = (info) => {
         return(
-            <div className="modalComponent" onClick={this._onCollapsed}>
-                    <div dangerouslySetInnerHTML={{__html: info}} className="modalComponentContent">
-                       
-                    </div>
+                <div className="modalComponent" onClick={this._onCollapsed}>
+                <div dangerouslySetInnerHTML={{__html: info}} className="modalComponentContent">
+                </div>
                 </div>
         )
     }

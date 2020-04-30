@@ -48,7 +48,7 @@ const geneInfo = {
 const externalCrossReferences = [{
   "name": "String",
   "url": "http://string-db.org/newstring_cgi/show_network_section.pl?identifier=511145.b4312",
-  "externaldbObjectId": "511145.b4312"
+  "externaldbObjectId": "511145.b4312",
 },
 {
   "name": "ASAP",

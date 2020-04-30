@@ -189,7 +189,7 @@ export default class Table extends Component {
 
 const RenderRow = (props) => {
 	return props.keys.map((key, index) => {
-		return <td key={props.data[key]}>
+		return <td key={index}>
 			{props.data[key]}
 		</td>
 	})
@@ -218,7 +218,7 @@ function displayVertical(name, data) {
 			<table className="tableComponent">
 				<thead>
 					<tr>
-						<th colSpan="3"><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
+						<th colSpan="2"><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -237,7 +237,7 @@ function displayHorizontal(name,getHeader, getRowsData) {
 			<table className="tableComponent">
 				<thead>
 					<tr>
-						<th colSpan="3"><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
+						<th colSpan={getHeader.length}><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
 					</tr>
 					<tr>{getHeader}</tr>
 				</thead>
