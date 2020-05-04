@@ -1,0 +1,14 @@
+
+.coverComponent-Glass{
+    position: absolute;
+    height: 60vh;
+    width: 100%;
+    background-color: #000000;
+    border: 1px solid black;
+    opacity: 0.6;
+}
+
+.coverComponent-background{
+    max-height: 60vh;
+    overflow: hidden;
+}
