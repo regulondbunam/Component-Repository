@@ -8,6 +8,15 @@
     opacity: 0.6;
 }
 
+.coverComponent-content{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-indent: 30px;
+    position: absolute;
+    height: 60vh;
+    width: 100%;
+}
+
 .coverComponent-background{
     max-height: 60vh;
     overflow: hidden;

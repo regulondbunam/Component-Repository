@@ -6,7 +6,8 @@ class Video extends Component {
 
     const {
       width,
-      height
+      height,
+      urlVideo
     } = this.props;
  
     // Datos del Video
@@ -15,7 +16,7 @@ class Video extends Component {
     const item = [
       {
         id: 1,
-        video: 'https://dl.dropboxusercontent.com/s/zoojwulu5p1wfrm/Bacteria.mp4?dl=0',
+        video: 'https://www.youtube.com/watch?v=r9PoLG_AonA',
         formato: 'video/mp4',
       }
     ];
@@ -30,6 +31,7 @@ class Video extends Component {
         return  <div key={ item.id }>
                   <video width={width} height={height} autoPlay muted loop>
                     <source src={ item.video} type={ item.formato }/>
+                    <h3>Video not supported</h3>
                   </video>
                 </div>
        
@@ -47,5 +49,6 @@ export default Video;
 
 Video.defaultProps = {
   width: "auto",
-  height: "auto"
+  height: "auto",
+  urlVideo: ""
 }
