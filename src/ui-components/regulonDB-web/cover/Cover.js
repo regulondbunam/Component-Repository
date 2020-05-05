@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Video from './Video'
+import CoverVideo from './CoverVideo'
 import './Style.css'
 
 export default class Cover extends Component {
@@ -12,7 +12,7 @@ export default class Cover extends Component {
       videoUrl,
       title,
     } = this.props
-
+    
     return (
       <div className="coverComponent">
         <div className="coverComponent-Glass" />
@@ -20,7 +20,7 @@ export default class Cover extends Component {
           <h1>{title}</h1>
         </div>
         <div className="coverComponent-background">
-          <Video />
+          <CoverVideo url={videoUrl}/>
         </div>
       </div>
 
@@ -28,6 +28,10 @@ export default class Cover extends Component {
 
 
   }
+
+}
+
+function CheckURL(url){
 
 }
 
