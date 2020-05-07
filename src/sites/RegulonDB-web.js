@@ -1,5 +1,6 @@
 import React from 'react';
 import Cover from '../ui-components/regulonDB-web/Cover'
+import MainMenu from '../ui-components/regulonDB-web/MainMenu'
 
 const urlVideo = "https://dl.dropboxusercontent.com/s/77wgabtmnyox8i8/Bacteria%20under%20the%20Microscope%20%28E%20%20coli%20and%20S%20%20aureus%29%5B2%5D.mp4?dl=0"
 const BacteriaVid = "https://dl.dropboxusercontent.com/s/zoojwulu5p1wfrm/Bacteria.mp4?dl=0"
@@ -21,8 +22,10 @@ export default function BasicInput() {
             <Cover coverType={"imagen"} title="DNA - DeoxyriboNucleic Acid" source={imgen} />
             <br/>
             <Cover coverType={"imagen"} title="Information- Biology" source={img} />
-            <h3>Cover whit Links</h3>
             <br />
+            <h2>Main Menu</h2>
+            <br />
+            <MainMenu />
             <br />
             <br />
         </div>
