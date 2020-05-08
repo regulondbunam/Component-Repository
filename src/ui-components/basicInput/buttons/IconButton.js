@@ -119,11 +119,12 @@ export default class IconButton extends Component {
         const {
             active,
             icon,
-            style
+            style,
+            iconStyle
         } = this.props;
             return (
                 <button style={style} className={selectStyle(active)} onClick={this.handleOnClickLink}>
-                    <i className="material-icons">{icon}</i>
+                    <i className="material-icons" style={iconStyle}>{icon}</i>
                 </button>
             )  
 
