@@ -3,16 +3,21 @@ import Button, {IconButton} from '../../basicInput/Buttons'
 import './Style.css'
  
 export default class MainMenu extends Component {
+    state = {
+        menuBody: false
+    }
     render() {
         const{
             dataMenu
         } = this.props
 
         const MENUBAR = MenuBar
+        const MENUBODY = MenuBody
 
         return(
             <div>
                <MENUBAR menus={dataMenu}/>
+               <MENUBODY></MENUBODY>
             </div>
         )
     }
@@ -20,6 +25,14 @@ export default class MainMenu extends Component {
 }
 
 class MenuBar extends Component{
+
+    _onPressMenuButton = () =>{
+
+    }
+    _onPressHomeButton = () =>{
+
+    }
+
     render() {
         const {
             menus
@@ -65,6 +78,7 @@ function MENU_BUTTON(title){
         </div>
     )
 }
+
 
 class MenuBody extends Component{
     render() {

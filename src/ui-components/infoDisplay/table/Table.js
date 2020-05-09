@@ -248,8 +248,9 @@ function displayHorizontal(name,getHeader, getRowsData) {
 		</div>
 	)
 }
+/* esta funcion es parte de una caracteristica a implementar a futuro
 function displayVerticalR(data) { }
-
+*/
 const thStyle = {
 	fontSize: "30px",
 	fontFamily: "arial",

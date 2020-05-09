@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Item from '../items/Item'
+
 import { HyperLink } from '../../basicInput/HyperLink'
 
 import './Style.css';
@@ -37,9 +37,9 @@ export default class Modal extends Component {
 
     render() {
         const {
-            buttons,
+            //buttons,
             info,
-            getValue,
+            //getValue,
             title,
         } = this.props
         const {

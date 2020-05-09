@@ -3,15 +3,13 @@ import CoverVideo from './CoverVideo'
 import CoverImg from './CoverImg'
 import './Style.css'
 
-const testimg = 'https://wallpapertag.com/wallpaper/full/a/4/1/148303-gorgerous-dna-background-1920x1080-for-mac.jpg'
-
 export default class Cover extends Component {
 
   render() {
 
     const {
       coverType,
-      links,
+      //links,
       source,
       opacity,
       title,

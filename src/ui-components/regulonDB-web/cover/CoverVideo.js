@@ -5,8 +5,8 @@ class CoverVideo extends Component {
   render() {
 
     const {
-      width,
-      height,
+      //width,
+      //height,
       url
     } = this.props;
 
