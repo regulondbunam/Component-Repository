@@ -99,7 +99,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import IconButton from './IconButton';
-import './Style.css';
+import Styles from './Buttons.module.css'
 
 const defOrientation = 'r'
 const styleLeft = {
@@ -128,7 +128,7 @@ export default class Flip extends Component {
                 orientationIcon ='keyboard_arrow_left'
                 return(
                     <React.Fragment>
-                        <div className={"flip"}>
+                        <div className={Styles.flipComponent}>
                         <IconButton active={active} style={styleLeft} icon={orientationIcon} onClick={this.handleOnClickLink}/>
                         {label}
                         </div>

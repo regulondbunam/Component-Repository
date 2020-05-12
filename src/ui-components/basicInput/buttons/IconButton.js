@@ -99,13 +99,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Style.css';
-
-let link = document.createElement('link');
-link.rel = 'stylesheet';
-link.type = 'text/css'; 
-link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-document.getElementsByTagName('HEAD')[0].appendChild(link);
+import Styles from './Buttons.module.css'
 
 export default class IconButton extends Component {
 
@@ -123,19 +117,23 @@ export default class IconButton extends Component {
             iconStyle
         } = this.props;
             return (
+                <>
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                    rel="stylesheet" />
                 <button style={style} className={selectStyle(active)} onClick={this.handleOnClickLink}>
                     <i className="material-icons" style={iconStyle}>{icon}</i>
                 </button>
+                </>
             )  
 
     }
 }
 
 function selectStyle (active) {
-    let styleClass = "iconButton  default"
+    let styleClass = Styles.iconButton+" "+Styles.default
     active
     ? styleClass += " "
-    : styleClass += " disabled"
+    : styleClass += " "+Styles.disabled
     return styleClass
 }
 

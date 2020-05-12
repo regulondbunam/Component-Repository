@@ -126,14 +126,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Style.css';
-
-/*let link = document.createElement('link');
-link.rel = 'stylesheet';
-link.type = 'text/css'; 
-link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-document.getElementsByTagName('HEAD')[0].appendChild(link);*/
-
+import Styles from './Buttons.module.css'
 
 export default class Button extends Component {
 
@@ -155,7 +148,7 @@ export default class Button extends Component {
         } = this.props;
 
             return (
-                <button id={id} className={selectStyle(accent,active)} onClick={this.handleOnClickLink} style={style}>
+                <button id={id} className={selectStyle(accent, active)} onClick={this.handleOnClickLink} style={style}>
                     {label}
                     {this.props.children}
                 </button>
@@ -165,13 +158,13 @@ export default class Button extends Component {
 }
 
 function selectStyle (accent, active) {
-    let styleClass = "button"
+    let styleClass = Styles.button
     accent
-    ? styleClass += " accent"
-    : styleClass += " default"
+    ? styleClass += " "+Styles.accent
+    : styleClass += " "+Styles.default
     active
     ? styleClass += " "
-    : styleClass += " disabled"
+    : styleClass += " "+Styles.disabled
 
     return styleClass
 }

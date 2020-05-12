@@ -106,7 +106,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Button from './Button'
 import DropDown from './DropDown'
-import './Style.css'
+//import Styles from './Buttons.module.css'
 
 
 const styleDropDown = {

@@ -103,14 +103,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Button from './Button'
-import './Style.css'
+import Styles from './Buttons.module.css'
 
-
-let link = document.createElement('link');
-link.rel = 'stylesheet';
-link.type = 'text/css'; 
-link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
-document.getElementsByTagName('HEAD')[0].appendChild(link);
 const arrowDown = "keyboard_arrow_down"
 const arrowUp = "keyboard_arrow_up"
 const styleDropDown = {
@@ -131,15 +125,15 @@ export default class DropDown extends Component {
 
     onSelect = (event) => {
         const value = event.target.id;
-        this.props.labelUpdate?this.setState({label: value}):this.setState({label: this.state.label})
-        this.setState({expand: !this.state.expand})
+        this.props.labelUpdate ? this.setState({ label: value }) : this.setState({ label: this.state.label })
+        this.setState({ expand: !this.state.expand })
         this.props.onSelect(value)
-        
+
     }
 
     expandDrop = (event) => {
-        if(this.props.active){
-            this.setState({expand: !this.state.expand})
+        if (this.props.active) {
+            this.setState({ expand: !this.state.expand })
         }
     };
 
@@ -158,38 +152,40 @@ export default class DropDown extends Component {
             expand
         } = this.state;
 
-            return (
-                <React.Fragment>
+        return (
+            <React.Fragment>
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                    rel="stylesheet" />
                 <Button onClick={this.expandDrop} active={active} style={style}>
                     {label}
                     <i className="material-icons">
-                    {
-                    expand
-                    ?arrowUp
-                    :arrowDown
-                    }</i>
+                        {
+                            expand
+                                ? arrowUp
+                                : arrowDown
+                        }</i>
                 </Button>
                 {
                     expand
-                    ?<div className={"dropBox"} onClick={this.onSelect}>
-                        {
-                        content.map((value)=>
-                            <Button id={value} key={value}  style={{marginBottom: "2px", width: "100%"}} onClick={this.noActionN}>
-                                {value}
-                            </Button>                              
-                        )}
-                    </div>
-                    :<div/>
+                        ? <div className={Styles.dropBox} onClick={this.onSelect}>
+                            {
+                                content.map((value) =>
+                                    <Button id={value} key={value} style={{ marginBottom: "2px", width: "100%" }} onClick={this.noActionN}>
+                                        {value}
+                                    </Button>
+                                )}
+                        </div>
+                        : <div />
                 }
-                </React.Fragment>
-                
-            )  
+            </React.Fragment>
+
+        )
 
     }
 }
 
-function noAction( value ) {
-    console.warn('Select item '+value+' has no activity')
+function noAction(value) {
+    console.warn('Select item ' + value + ' has no activity')
 }
 
 DropDown.propTypes = {
@@ -203,7 +199,7 @@ DropDown.propTypes = {
 };
 
 DropDown.defaultProps = {
-    active:  true,
+    active: true,
     content: [],
     expand: false,
     label: "DropDown",
