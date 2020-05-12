@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CoverVideo from './CoverVideo'
 import CoverImg from './CoverImg'
-import './Style.css'
+import Styles from './Cover.module.css'
 
 export default class Cover extends Component {
 
@@ -32,12 +32,12 @@ export default class Cover extends Component {
     }
     
     return (
-      <div className="coverComponent">
-        <div className="coverComponent-Glass" style={{opacity: opacity}} />
-        <div className="coverComponent-content">
+      <div className={Styles.coverComponent}>
+        <div className={Styles.coverComponentGlass} style={{opacity: opacity}} />
+        <div className={Styles.coverComponentContent}>
           <h1>{title}</h1>
         </div>
-        <div className="coverComponent-background">
+        <div className={Styles.coverComponentBackground}>
           {
             displayed
           }
