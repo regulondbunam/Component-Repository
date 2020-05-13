@@ -98,7 +98,7 @@
 **/
 import React from 'react'
 import PropTypes from 'prop-types';
-import './Style.css';
+import Styles from './Selectors.module.css'
 
 export default class Checkbox extends React.Component {
     constructor(props) {
@@ -125,15 +125,15 @@ export default class Checkbox extends React.Component {
             checked
         } = this.state
         return (
-            <label className="checkLabel">
-                <div className="checkText">{label}</div>
+            <label className={Styles.checkLabel}>
+                <div className={Styles.checkText}>{label}</div>
                 <input
                     type="checkbox"
                     checked={checked}
                     onChange={this._handleOnChange}
                     value={value}
                 />
-                <span className="checkmark"></span>
+                <span className={Styles.checkmark}></span>
             </label>
         )
     }

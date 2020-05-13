@@ -99,7 +99,7 @@
 **/
 import React from 'react'
 import PropTypes from 'prop-types';
-import './Style.css';
+import Styles from './Selectors.module.css'
 
 export default class RadioButton extends React.Component {
 
@@ -116,7 +116,7 @@ export default class RadioButton extends React.Component {
         } = this.props
         return (
             <label 
-                className="checkLabel"
+                className={Styles.checkLabel}
             >
             {label}
             <input
@@ -125,7 +125,7 @@ export default class RadioButton extends React.Component {
                 name={name}
                 onChange={this._onChange}
             />
-            <span className="r-checkmark"></span>
+            <span className={Styles.rCheckmark}></span>
             </label>
         )
     }

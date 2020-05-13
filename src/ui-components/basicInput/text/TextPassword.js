@@ -98,7 +98,7 @@
 **/
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
-import './Style.css';
+import Styles from './Text.module.css'
 
 export default class TextPassword extends Component {
     state = {
@@ -120,7 +120,7 @@ export default class TextPassword extends Component {
         return (
             <input
                 type="password"
-                className='textBox'
+                className={Styles.textBox}
                 placeholder={placeholder}
                 value={keyword}
                 onChange={(event) => this._inputChangedHandler(event)}

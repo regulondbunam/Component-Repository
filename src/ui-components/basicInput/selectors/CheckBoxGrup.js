@@ -103,7 +103,7 @@
 import React, {Component } from 'react'
 import PropTypes from 'prop-types'
 import CheckBox from './CheckBox'
-import './Style.css';
+
 
 export default class CheckBoxGrup extends Component {
 

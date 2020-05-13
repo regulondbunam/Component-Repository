@@ -100,7 +100,7 @@
 **/
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
-import './Style.css';
+import Styles from './Text.module.css'
 
 
 export default class TextArea extends Component {
@@ -124,7 +124,7 @@ export default class TextArea extends Component {
 			keyword
 		} = this.state
         return (
-            <textarea className='textBox'
+            <textarea className={Styles.textBox}
                 rows={rows}
                 cols={cols}
 				value={keyword}

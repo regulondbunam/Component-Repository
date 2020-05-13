@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Style.css';
+import Styles from './HyperLink.module.css'
 
 export default class HyperLink extends Component {
 
@@ -52,12 +52,12 @@ function selectType(type, disabled) {
     if (!disabled) {
         switch (type) {
             case 'gene':
-                return 'hyp-gene'
+                return Styles.hypGene
             default:
-                return 'hyp'
+                return Styles.hyp
         }
     }else{
-        return 'hyp-disabled'
+        return Styles.hyp-disabled
     }
 
 }

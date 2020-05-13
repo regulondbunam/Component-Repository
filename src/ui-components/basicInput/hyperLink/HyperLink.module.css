@@ -11,17 +11,17 @@
     color: blue;
     text-decoration: underline overline;
 }
-.hyp-gene{
+.hypGene{
     font-style: italic;
     color: #C93A1D;
     text-decoration: none;
 }
-.hyp-gene:hover{
+.hypGene:hover{
     cursor: pointer;
     color: rgb(224, 96, 70);
     text-decoration: none;
 }
-.hyp-gene:active{
+.hypGene:active{
     color: #C93A1D;
     text-decoration: underline overline;
 }
