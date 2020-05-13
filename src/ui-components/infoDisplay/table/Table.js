@@ -96,7 +96,7 @@ import PropTypes from 'prop-types';
 import Item from '../items/Item'
 import Modal from '../Modal/Modal'
 
-import './Style.css';
+import Styles from './Table.module.css';
 
 const deployments = {
 	default: 'd',
@@ -177,7 +177,6 @@ export default class Table extends Component {
 			default:
 				console.error("NO TABLE SUPORT")
 		}
-		console.log(displayType)
 		return (
 			<React.Fragment>
 				{display}
@@ -215,7 +214,7 @@ function ShowInfo(key, info) {
 function displayVertical(name, data) {
 	return (
 		<div>
-			<table className="tableComponent">
+			<table className={Styles.tableComponent}>
 				<thead>
 					<tr>
 						<th colSpan="2"><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>
@@ -234,7 +233,7 @@ function displayVertical(name, data) {
 function displayHorizontal(name,getHeader, getRowsData) {
 	return (
 		<div>
-			<table className="tableComponent">
+			<table className={Styles.tableComponent}>
 				<thead>
 					<tr>
 						<th colSpan={getHeader.length}><Item width="100%" model="clear" style={thStyle}>{name}</Item></th>

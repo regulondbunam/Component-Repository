@@ -101,7 +101,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Style.css';
+import Styles from './Item.module.css'
 
 // ["clear", "accent", "accent_ligth", "dark"]
 const models = {
@@ -156,7 +156,7 @@ export default class Item extends Component {
 			) 
 
         return (
-            <div id={name} className="item" style={masterStyle}>
+            <div id={name} className={Styles.item} style={masterStyle}>
 				{this.props.children}
 			</div>
         )

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { HyperLink } from '../../basicInput/HyperLink'
 
-import './Style.css';
+import Styles from './Modal.module.css'
 
 export default class Modal extends Component {
 
@@ -12,7 +12,7 @@ export default class Modal extends Component {
     }
 
     _onCollapsed = (event) => {
-        if (event.target.className !== "modalComponentContent") { 
+        if (event.target.className !== Styles.modalComponentContent) { 
             this.setState({ collapsed: !this.state.collapsed }) 
         }
     }
@@ -28,8 +28,8 @@ export default class Modal extends Component {
     }
     displayModal = (info) => {
         return (
-            <div className="modalComponent" onClick={this._onCollapsed}>
-                <div dangerouslySetInnerHTML={{ __html: info }} className="modalComponentContent" onClick={noAction}>
+            <div className={Styles.modalComponent} onClick={this._onCollapsed}>
+                <div dangerouslySetInnerHTML={{ __html: info }} className={Styles.modalComponentContent} onClick={noAction}>
                 </div>
             </div>
         )
