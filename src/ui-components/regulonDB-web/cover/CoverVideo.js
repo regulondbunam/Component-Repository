@@ -5,8 +5,8 @@ class CoverVideo extends Component {
   render() {
 
     const {
-      //width,
-      //height,
+      width,
+      height,
       url
     } = this.props;
 
@@ -31,7 +31,7 @@ class CoverVideo extends Component {
         // colocamos el objeto 'id: 1' en <div key={ item.id }  
 
         return  <div key={ item.id }>
-                  <video  autoPlay muted loop>
+                  <video width={width} height={height}  autoPlay muted loop>
                     <source src={ item.video} type={ item.formato }/>
                   </video>
                 </div>
@@ -51,6 +51,6 @@ export default CoverVideo;
 
 CoverVideo.defaultProps = {
   width: "100%",
-  height: "60vh",
+  height: "",
   url: ""
 }

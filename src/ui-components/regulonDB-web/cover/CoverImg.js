@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
- 
+
 export default class CoverImg extends Component {
- 
+
   render() {
 
     const {
-        urlImage
+      urlImage,
+      width,
+      height
     } = this.props
- 
+
     // Datos que debe renderizar la imagen
- 
+
     const item = [
       {
         id: 1,
@@ -22,28 +24,29 @@ export default class CoverImg extends Component {
         link: ''
       }
     ];
- 
+
     return (
- 
-      item.map(item => { 
- 
+
+      item.map(item => {
+
         // Es necesario colocar una 'key' a partir de la versión de React JS 16
         // colocamos el objeto 'id: 1' en <div key={ item.id } 
- 
-        return <a key={ item.id } href={ item.link } target={ item.target }>
-                <img className={ item.class } src={ item.img } alt={ item.alt } title={ item.title } />
-               </a>
- 
+
+        return <a key={item.id} href={item.link} target={item.target}>
+          <img width={width} height={height} className={item.class} src={item.img} alt={item.alt} title={item.title} />
+        </a>
+
       })
- 
+
     )
-    
- 
+
+
   }
- 
+
 };
 
 CoverImg.defultProps = {
-    urlImage: ""
+  width: "100%",
+  height: "",
+  urlImage: ""
 }
- 

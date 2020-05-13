@@ -38,13 +38,10 @@ class MenuBar extends Component{
             menus
         } = this.props
 
-        console.log(menus)
-
         return(
             <div className={Styles.menuBarComponent}>
                 {
                     menus.map(function(menu){
-                        console.log(menu.type)
                         switch(menu.type){
                             case "HOME":
                                 return HOME_BUTTON()
@@ -65,7 +62,7 @@ const buttonHomeStyle = {width:"60px",height:"60px", border: "solid 3px #ffffff"
 const iconStyle = {fontSize: "50px"}
 function HOME_BUTTON(){
     return(
-        <div className={Styles.menuBarHome}>
+        <div key={"home"} className={Styles.menuBarHome}>
                     <IconButton icon={"home"} style={buttonHomeStyle} iconStyle={iconStyle}/>
                 </div>
     )
@@ -73,7 +70,7 @@ function HOME_BUTTON(){
 const buttonMenuStyle = {fontSize: "18px", height: "80px"}
 function MENU_BUTTON(title){
     return(
-        <div className={Styles.menuBarMenu}>
+        <div key={title} className={Styles.menuBarMenu}>
             <Button label={title} style={buttonMenuStyle}/>
         </div>
     )
