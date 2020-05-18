@@ -112,13 +112,15 @@ export default class TextBox extends Component {
 
     render() {
         const {
-            placeholder
+			placeholder,
+			style
 		} = this.props
 		const {
 			keyword
 		} = this.state
         return (
             <input
+				style={style}
                 type="text"
                 className={Styles.textBox}
                 placeholder={placeholder}
@@ -134,14 +136,16 @@ TextBox.propTypes = {
     disabled: PropTypes.bool,
 	onChangeText: PropTypes.func,
 	placeholder: PropTypes.string,
-	value: PropTypes.string
+	value: PropTypes.string,
+	style: PropTypes.object
 }
 
 TextBox.defaultProps = {
     disabled: false,
 	onChangeText: noAction,
 	placeholder: "type here",
-	value: ""
+	value: "",
+	style: {}
 };
 
 function noAction() {

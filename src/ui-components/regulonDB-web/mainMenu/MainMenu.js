@@ -15,7 +15,7 @@ export default class MainMenu extends Component {
         const MENUBODY = MenuBody
 
         return(
-            <div>
+            <div >
                <MENUBAR menus={dataMenu}/>
                <MENUBODY></MENUBODY>
             </div>
