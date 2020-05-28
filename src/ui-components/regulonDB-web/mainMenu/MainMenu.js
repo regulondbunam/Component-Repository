@@ -1,89 +1,156 @@
 import React, { Component } from 'react';
-import Button, {IconButton} from '../../basicInput/Buttons'
-import Styles from './MainMenu.module.css'
- 
-export default class MainMenu extends Component {
-    state = {
-        menuBody: false
-    }
-    render() {
-        const{
-            dataMenu
-        } = this.props
+import MenuBody from './MainMenuBody'
+import Button, { IconButton } from '../../basicInput/Buttons'
 
-        const MENUBAR = MenuBar
-        const MENUBODY = MenuBody
+class MainMenu extends Component {
+    state = { idPressed: "", isPressed: false }
 
-        return(
-            <div >
-               <MENUBAR menus={dataMenu}/>
-               <MENUBODY></MENUBODY>
-            </div>
-        )
+    DropMenu = () => {
+        this.setState({ isPressed: !this.state.isPressed })
     }
 
-}
-
-class MenuBar extends Component{
-
-    _onPressMenuButton = () =>{
-
+    SetIdMenu = (id) => {
+        this.setState({ idPressed: id})
     }
-    _onPressHomeButton = () =>{
 
+    CloseMenu = () => {
+        this.setState({ isPressed: false, idPressed: "" })
     }
 
     render() {
         const {
-            menus
+            menuData
         } = this.props
 
-        return(
-            <div className={Styles.menuBarComponent}>
-                {
-                    menus.map(function(menu){
-                        switch(menu.type){
-                            case "HOME":
-                                return HOME_BUTTON()
-                            default:
-                                return MENU_BUTTON(menu.title)
-                        }
-                        
-                    }
+        const {
+            idPressed,
+            isPressed
+        } = this.state
 
-                    )
-                }
-                
+        let menuButton = () => {
+            return <></>
+        }
+        if (typeof menuData !== 'undefined') {
+            menuButton = () => {
+                return <MenuButtons menuData={menuData} idPressed={idPressed} isPressed={isPressed} dropMenu={this.DropMenu} getId={this.SetIdMenu} />
+            }
+        }
+        let menuBody = () => {
+            return <></>
+        }
+        if (isPressed) {
+            menuBody = () => {
+                return <MenuBody menuData={menuData} id={idPressed} close={this.CloseMenu} />
+            }
+        }
+        return (
+            <div onMouseLeave={this.CloseMenu}>
+                <div style={styleBar}>
+                    {menuButton()}
+                </div>
+                <div>
+                    { menuBody() }
+                </div>
             </div>
-        )
+        );
     }
 }
-const buttonHomeStyle = {width:"60px",height:"60px", border: "solid 3px #ffffff"}
-const iconStyle = {fontSize: "50px"}
-function HOME_BUTTON(){
-    return(
-        <div key={"home"} className={Styles.menuBarHome}>
-                    <IconButton icon={"home"} style={buttonHomeStyle} iconStyle={iconStyle}/>
-                </div>
-    )
+
+const MenuButtons = ({ menuData, idPressed, isPressed, dropMenu, getId }) => {
+    return (
+        <>
+            {
+                menuData.map((Item) => {
+                    
+                    switch (Item.type) {
+                        case "HOME":
+                            return <div key={Item.id}>{HomeButton(Item.link)}</div>
+                        default:
+                            return (
+                                <div key={Item.id}>
+                                    <MenuButton
+                                        id={Item.id}
+                                        title={Item.title}
+                                        dropMenu={dropMenu}
+                                        getId={getId}
+                                        isPressed={idPressed === Item.id && isPressed }
+                                    />
+                                </div>
+                            )
+                    }
+
+                })
+            }
+
+        </>
+    );
 }
-const buttonMenuStyle = {fontSize: "18px", height: "80px"}
-function MENU_BUTTON(title){
-    return(
-        <div key={title} className={Styles.menuBarMenu}>
-            <Button label={title} style={buttonMenuStyle}/>
+
+
+const MenuButton = ({ id, title, dropMenu, getId, isPressed }) => {
+    let buttonStyle = {}
+    if (isPressed) { buttonStyle = { backgroundColor: "#72a7c7" } }
+    function hover() {
+        getId(id)
+    }
+    function onClick(){
+        dropMenu()
+    }
+    return (
+        <div style={styleMenu} onMouseOver={hover}>
+            <Button label={title} style={Object.assign({}, buttonStyle, styleMenuButton)} onClick={onClick} />
+        </div>
+    );
+}
+
+/* Funcion utilizada para validar la esturctura del objeto menuData
+function TestMenuData(menuData, propiedad){
+    return typeof menuData !== 'undefined' && menuData.hasOwnProperty(propiedad);
+  }
+
+*/
+
+
+function HomeButton(homeLink) {
+
+    return (
+        <div style={styleHome}>
+            <a style={{ textDecoration: "none" }} href={homeLink}>
+                <IconButton icon={"home"} style={styleHomeButton} iconStyle={{ fontSize: "50px" }} />
+            </a>
         </div>
     )
 }
 
 
-class MenuBody extends Component{
-    render() {
-
-        return(
-            <div>
-
-            </div>
-        )
-    }
+const styleBar = {
+    paddingLeft: "10%",
+    backgroundColor: "#32617d",
+    height: "60px"
 }
+
+const styleHome = {
+    float: "left",
+    paddingRight: "2%"
+}
+
+const styleHomeButton = {
+    width: "60px",
+    height: "60px",
+    border: "solid 3px #ffffff"
+}
+
+const styleMenu = {
+    float: "left",
+    paddingRight: "1%"
+}
+const styleMenuButton = {
+    fontSize: "18px",
+    height: "60px",
+    fontFamily: "sans-serif"
+}
+
+
+
+
+export default MainMenu;
