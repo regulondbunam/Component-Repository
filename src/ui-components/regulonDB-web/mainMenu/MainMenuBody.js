@@ -53,6 +53,7 @@ const styleSubmenu = {
 const styleMenuBody = {
     display: "flex",
     backgroundColor: "#72a7c7",
+    boxShadow: "inset 0px -5px 5px 0px rgba(0,0,0,.5)",
     padding: "1% 10% 2% 10%",
     height: "auto"
 }
