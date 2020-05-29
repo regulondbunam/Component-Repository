@@ -107,20 +107,13 @@ import Styles from './Buttons.module.css'
 
 const arrowDown = "keyboard_arrow_down"
 const arrowUp = "keyboard_arrow_up"
-const styleDropDown = {
-    width: "auto",
-    paddingLeft: "5px",
-    paddingRight: "5px"
-}
+
 
 export default class DropDown extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
+    state = {
             expand: this.props.expand,
-            label: this.props.label
-        }
+            label: this.props.label,
     }
 
     onSelect = (event) => {
@@ -131,7 +124,7 @@ export default class DropDown extends Component {
 
     }
 
-    expandDrop = (event) => {
+    expandDrop = () => {
         if (this.props.active) {
             this.setState({ expand: !this.state.expand })
         }
@@ -153,10 +146,10 @@ export default class DropDown extends Component {
         } = this.state;
 
         return (
-            <React.Fragment>
+            <>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                     rel="stylesheet" />
-                <Button onClick={this.expandDrop} active={active} style={style}>
+                <Button onClick={this.expandDrop} disabled={active} style={style}>
                     {label}
                     <i className="material-icons">
                         {
@@ -175,9 +168,9 @@ export default class DropDown extends Component {
                                     </Button>
                                 )}
                         </div>
-                        : <div />
+                        : <></>
                 }
-            </React.Fragment>
+            </>
 
         )
 
@@ -188,8 +181,14 @@ function noAction(value) {
     console.warn('Select item ' + value + ' has no activity')
 }
 
+const styleDropDown = {
+    width: "auto",
+    paddingLeft: "5px",
+    paddingRight: "5px"
+}
+
 DropDown.propTypes = {
-    active: PropTypes.bool,
+    disabled: PropTypes.bool,
     content: PropTypes.array,
     expand: PropTypes.bool,
     label: PropTypes.string,
@@ -199,7 +198,7 @@ DropDown.propTypes = {
 };
 
 DropDown.defaultProps = {
-    active: true,
+    disabled: false,
     content: [],
     expand: false,
     label: "DropDown",

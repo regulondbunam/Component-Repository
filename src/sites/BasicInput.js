@@ -35,7 +35,7 @@ export default function BasicInput() {
       <h3>DropDown</h3>
       <DropDown content={op} onSelect={alertDropdown}/>
       <br/>
-      <DropDown active={false}/>
+      <DropDown disabled={true}/>
       <br/>
       <h3>Split</h3>
       <Split options={op} onClick={alertDropdown}></Split>
