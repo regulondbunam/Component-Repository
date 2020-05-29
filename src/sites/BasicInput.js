@@ -23,11 +23,11 @@ export default function BasicInput() {
       <h3>Button</h3>
       <Button label="Button" accent={true} onClick={me}/>
       <br/>
-      <Button label="Button" accent={true} active={false} onClick={me} />
+      <Button label="Button" accent={true} disabled={true} onClick={me} />
       <br/>
       <Button label="Button" />
       <br/>
-      <Button label="Button" active={false} />
+      <Button label="Button" disabled={true} />
       <h3>IconButton</h3>
       <IconButton/>
       <br/>

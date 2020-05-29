@@ -9,7 +9,6 @@ export default class Cover extends Component {
 
     const {
       coverType,
-      //links,
       source,
       opacity,
       title,
@@ -36,7 +35,7 @@ export default class Cover extends Component {
       <div className={Styles.coverComponent}>
         <div className={Styles.coverComponentGlass} style={{opacity: opacity}} />
         <div className={Styles.coverComponentContent}>
-        <h1 className={Styles.coverTitle}>{title}</h1>
+        <h1 className={Styles.coverTitle} style={{color: colorTitle}}>{title}</h1>
           {this.props.children}
         </div>
         <div className={Styles.coverComponentBackground}>
@@ -73,7 +72,6 @@ function Video(videoUrl){
 
 Cover.defaultProps = {
   coverType: "Color",
-  links: [],
   opacity: 0.6,
   source: '#000000',
   title: "Cover Title",
