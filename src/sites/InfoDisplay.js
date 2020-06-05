@@ -1,7 +1,8 @@
 import React from 'react';
 import {Item, Table} from '../ui-components/infoDisplay/InfoDisplay'
+import {PreviewMD} from '../ui-components/infoDisplay/markDown/MarkDown'
 
-
+const mdurl = 'https://dl.dropboxusercontent.com/s/spvinutaef097qt/testMD.md?dl=0'
 
 export default function BasicInput() {
 
@@ -21,7 +22,8 @@ export default function BasicInput() {
           <br/>
           <Table name={"Reference"} data={externalCrossReferences}/>
           <br/>
-          <br/>
+          <h1>MarkDown with react-markdown-preview by (uiw)</h1>
+          <PreviewMD mdurl={mdurl} />
       </div>
   )
 }
