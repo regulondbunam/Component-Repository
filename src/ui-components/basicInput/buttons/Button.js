@@ -4,10 +4,10 @@
 # Component name 
 	
 	[Button]
-	
+### version 1.0
 ## Description  
 	
-	[This component presents the functionality of a button]
+	[This component is a simple button, activated by a click, has two different aspects, by default, accent]
 
 ## Category   
 	
