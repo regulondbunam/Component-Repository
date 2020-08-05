@@ -38,7 +38,7 @@ export default function BasicInput() {
       <DropDown disabled={true}/>
       <br/>
       <h3>Split</h3>
-      <Split options={op} onClick={alertDropdown}></Split>
+      <Split arrayOptions={op} onClick={alertDropdown}></Split>
       <br/>
       <h2>Selectors</h2>
       <h3>CheckBox</h3>

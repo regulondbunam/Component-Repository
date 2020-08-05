@@ -104,7 +104,7 @@ import Styles from './Buttons.module.css'
 export default class IconButton extends Component {
 
     handleOnClickLink = (event) => {
-        if(this.props.disabled){
+        if(!this.props.disabled){
             this.props.onClick(event);
         }
     };
@@ -144,15 +144,21 @@ function noAction() {
 }
 
 IconButton.propTypes = {
+    className: PropTypes.string,
     disabled: PropTypes.bool,
     icon: PropTypes.string,
+    iconStyle: PropTypes.object,
+    iconClassName: PropTypes.string,
     onClick: PropTypes.func,
     style: PropTypes.object
 };
 
 IconButton.defaultProps = {
+    className: "",
     disabled: false,
     icon: "sentiment_satisfied_alt",
+    iconStyle: {},
+    iconClassName: "",
     onClick: noAction,
     style: {}
 };

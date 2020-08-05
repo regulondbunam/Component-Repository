@@ -3,8 +3,8 @@
 
 # Component name 
 	
-	[Split]
-	
+	[This component is a button with the ability to change the call to action, is composed of two parts the main button and a bullet that allows you to display the arrayOptions to exchange the button.  ]
+### Version 1.0
 ## Description  
 	
 	[-]
@@ -24,16 +24,16 @@
 
 ## Usage 
 	
-	[example: <Split options={options} onClick={action}></Split> ]
+	[example: <Split arrayOptions={arrayOptions} onClick={action}></Split> ]
 
 ## Props 
 
   | prop name     | Type     | Default                                              | Description                                 |
 | ------------- | -------- | ---------------------------------------------------- | ------------------------------------------- |
-| active        | boolean  | true                                                 | enables or disables the button              |
+| disabled        | boolean  | true                                                 | enables or disables the button              |
 | expand        | boolean  | false                                                | habilita el cuadro de seleccion de opciones |
 | label         | string   | "button"                                             | Button label                                |
-| options       | array    | []                                                   |                                             |
+| arrayOptions       | array    | []                                                   |                                             |
 | onClick       | function | noAction                                             |                                             |
 | styleButton   | object   | {float: "left", marginRight: "2px"}                  |                                             |
 | styleDropDown | object   | {width: "auto", paddingLeft: "0", paddingRight: "0"} |                                             |
@@ -127,25 +127,27 @@ export default class Split extends Component {
         super(props)
         this.state = {
             label: this.props.label,
-            expand: this.props.expand
+            expand: this.props.expand,
+            value: {}
         }
     }
 
     selected = (value) =>{
-        this.setState({label: value})
+        this.setState({label: value.option, value: value})
+        
     }
 
-    onClickB = () => {
-        if(this.props.active){
-            this.props.onClick(this.state.label);
+    onClick = () => {
+        if(!this.props.disabled){
+            this.props.onClick(this.state.value);
         }
     };
 
 
     render() {
         const {
-            active,
-            options,
+            disabled,
+            arrayOptions,
             styleButton,
             styleDropDown
             
@@ -156,8 +158,8 @@ export default class Split extends Component {
         } = this.state
             return (
                 <React.Fragment>
-                    <Button label={label} onClick={this.onClickB} style={styleButton} active={active}/>
-                    <DropDown label={""} active={active} content={options} style={styleDropDown} expand={expand} labelUpdate={false} onSelect={this.selected}/>
+                    <Button label={label} onClick={this.onClick} style={styleButton} disabled={disabled}/>
+                    <DropDown label={""} disabled={disabled} arrayOptions={arrayOptions} style={styleDropDown} expand={expand} labelUpdate={false} onSelect={this.selected}/>
                 </React.Fragment>
             )
     }
@@ -168,20 +170,20 @@ function noAction() {
 }
 
 Split.propTypes = {
-    active: PropTypes.bool,
+    disabled: PropTypes.bool,
     expand: PropTypes.bool,
     label: PropTypes.string,
-    options: PropTypes.array,
+    arrayOptions: PropTypes.array,
     onClick: PropTypes.func,
     styleButton: PropTypes.object,
     styleDropDown: PropTypes.object
 };
 
 Split.defaultProps = {
-    active:  true,
+    disabled:  false,
     expand: false,
     label: "select option =>",
-    options: [],
+    arrayOptions: [],
     onClick: noAction,
     styleButton: styleButton,
     styleDropDown: styleDropDown

@@ -123,7 +123,6 @@ const DropDown = ({
 
     useEffect(()=>{
         if(Object.entries(option).length !== 0 ){
-            console.log(option)
             onSelect(option)
             setOption({})
         }
