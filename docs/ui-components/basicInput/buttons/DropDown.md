@@ -1,32 +1,69 @@
-# DropDown Component 0.1
+/**
+# Component (user guide)
+# Component name 
+[DropDown --v1.0]
+## Description  
+[This component allows us to display several options, being on top of the component a vertical palette with options is shown, allowing to click one of these.]
+## Category   
+[Visual, Functional Component]  
+## Live demo 
+[-]
+## Installation 
+[-]
+## Usage 
+ [
 
-to import:
-```js
-  import {DropDown} from "regulondb-component-repository/uiComp/basicInput/Buttons"
-```
+ <DropDown arrayOptions={options} onSelect={dropSelect}/>
 
-## Content in DropDown component
+ ]
 
-### Default Component
+## Props 
 
-#### DropDown button
+| props        | type     | default     | description                                                  |
+| ------------ | -------- | ----------- | ------------------------------------------------------------ |
+| accent       | boolean  | false       | enables accent button design                                 |
+| arrayOptions | array    | []          | arrangement of display options                               |
+| className    | string   |             | Class Name of item dropdown                                  |
+| disabled     | boolean  | false       | disable the dropdown                                         |
+| id           | string   |             | id to html document                                          |
+| label        | string   | DropDown    | Dropdown label                                               |
+| style        | object   | {}          |                                                              |
+| isDisplay    | boolean  | false       | enables the component to be displayed at startup             |
+| onSelect     | function | (value)=>{} | value is an object that contains the attributes index and option selected |
 
-![DropDown B](https://i.ibb.co/db1LRQr/Captura-de-Pantalla-2019-10-23-a-la-s-11-45-04.png)
-![DropDown](https://i.ibb.co/52b11rK/Captura-de-Pantalla-2019-10-23-a-la-s-11-48-34.png)
+## Exception
 
-use Component
-```js
-<DropDown>
-  <p>label item</p>
-  <Button>
-  Item Button
-  </Button>
-</DropDown>
-```
-## Props
+__Category (Error, Warning or Message)__  
 
-name | Data Type  | Default  | Description
---|---|---|--
-children  | node  |   | The content of the DropDown
-disabled  | boolean  | false  | disabled button
-label  | String  | '' | label in DropDown
+Description of the exception (if necessary)
+
+## License
+[MIT]
+
+## Author 
+[CCG-UNAM-RegulonDB]
+
+**/
+/**
+# Component (technical guide)
+## Component Type 
+[Functional Component, hook]
+## Dependencies
+ [React, { Component },PropTypes, RegulonDB-uicomponents Button]
+## States
+
+| state   | type    | default     | description                 |
+| ------- | ------- | ----------- | --------------------------- |
+| display | boolean | false       | dropdown box display status |
+| option  | object  | {}          | status of selected option   |
+| \_label  | string  | PROP[label] | dropdown label status       |
+
+
+## Function description
+
+## [UseEffect]
+
+__Description:__  
+[this function updates the status of the chosen option]
+
+**/
