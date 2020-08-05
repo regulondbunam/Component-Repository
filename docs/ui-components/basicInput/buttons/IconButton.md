@@ -1,29 +1,21 @@
 /**
-
 # Component (user guide)
-
 # Component name 
-
 [IconButton --v1.0]
 
 ## Description  
-
 [This component is a simple button, activated by a click, ]
 
 ## Category   
-
 [Visual, Functional Component]  
 
 ## Live demo 
-
 [-]
 
 ## Installation 
-
 [-]
 
 ## Usage 
-
 [-]
 
 ## Props 
@@ -38,34 +30,26 @@
 | style         | object  | {}                        | style of button by object                                    |
 
 ## Exception
-
 __Category (Error, Warning or Message)__  
 Description of the exception (if necessary)
 
 ## License
-
 [MIT]
 
 ## Author 
-
 [CCG-UNAM-RegulonDB]
 
 **/
 
 /**
-
 # Component (technical guide)
-
 ## Component Type 
-
 [Stateless functional component]
 
 ## Dependencies
-
 [React, { Component },PropTypes]
 
 ## States
-
 ## Function description
 
 ## [warn_noAction]
@@ -116,69 +100,3 @@ __Return:__
 Description the class name requiere of css
 
 **/
-
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Styles from './Buttons.module.css'
-
-export default class IconButton extends Component {
-
-    handleOnClickLink = (event) => {
-        if(!this.props.disabled){
-            this.props.onClick(event);
-        }
-    };
-
-    render() {
-        const {
-            className,
-            disabled,
-            icon,
-            iconStyle,
-            iconClassName = '',
-            style,
-        } = this.props;
-            return (
-                <>
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                    rel="stylesheet" />
-                <button style={style} className={selectStyle(disabled,className)} onClick={this.handleOnClickLink}>
-                    <i className={`material-icons ${iconClassName}`} style={iconStyle}>{icon}</i>
-                </button>
-                </>
-            )  
-
-    }
-}
-
-function selectStyle (disabled,className) {
-    let styleClass = className+" "+Styles.iconButton+" "+Styles.default
-    disabled
-    ? styleClass += " "+Styles.disabled
-    : styleClass += " "
-    return styleClass
-}
-
-function warn_noAction() {
-    console.warn('Button has no activity')
-}
-
-IconButton.propTypes = {
-    className: PropTypes.string,
-    disabled: PropTypes.bool,
-    icon: PropTypes.string,
-    iconStyle: PropTypes.object,
-    iconClassName: PropTypes.string,
-    onClick: PropTypes.func,
-    style: PropTypes.object
-};
-
-IconButton.defaultProps = {
-    className: "",
-    disabled: false,
-    icon: "sentiment_satisfied_alt",
-    iconStyle: {},
-    iconClassName: "",
-    onClick: warn_noAction,
-    style: {}
-};
