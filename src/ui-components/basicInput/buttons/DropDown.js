@@ -128,7 +128,7 @@ const DropDown = ({
         }
     },[option, onSelect])
     return (
-        <div>
+        <>
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                 rel="stylesheet" />
             <Button onClick={()=>{setDisplay(!display)}} disabled={disabled} style={style}>
@@ -159,7 +159,7 @@ const DropDown = ({
                 </div>
                 : <></>
             }
-        </div>
+        </>
     );
 }
 
