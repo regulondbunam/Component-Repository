@@ -11,7 +11,7 @@ function me(){
 }
 
 function alertDropdown (value){
-  alert("se ha seleccionado: "+value)
+  alert(`Se ha seleccionado: ${value.option}`)
 }
 
 export default function BasicInput() {
@@ -33,7 +33,7 @@ export default function BasicInput() {
       <br/>
       <IconButton active={false}/>
       <h3>DropDown</h3>
-      <DropDown content={op} onSelect={alertDropdown}/>
+      <DropDown arrayOptions={op} onSelect={alertDropdown}/>
       <br/>
       <DropDown disabled={true}/>
       <br/>

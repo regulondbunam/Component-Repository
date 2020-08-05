@@ -4,10 +4,10 @@
 # Component name 
 	
 	[DropDown]
-	
+### Version 1.0
 ## Description  
 	
-	[The DropDown button allows the user an interactivity with several options in an agile way, this component when pressed displays a box with multiple options]
+	[This component allows us to display several options, being on top of the component a vertical palette with options is shown, allowing to click one of these.]
 
 ## Category   
 	
@@ -100,7 +100,7 @@
 
 **/
 
-import React, { Component } from 'react'
+import React, {useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Button from './Button'
 import Styles from './Buttons.module.css'
@@ -108,102 +108,71 @@ import Styles from './Buttons.module.css'
 const arrowDown = "keyboard_arrow_down"
 const arrowUp = "keyboard_arrow_up"
 
+const DropDown = ({
+    arrayOptions = [],
+    disabled = false,
+    isLabelUpdate = false,
+    label = "DropDown",
+    style = {},
+    isDisplay = false,
+    onSelect = ()=>{}
+}) => {
+    const [display, setDisplay] = useState(isDisplay)
+    const [option, setOption] = useState({})
+    const [_label, setLabel] = useState(label)
 
-export default class DropDown extends Component {
-
-    state = {
-            expand: this.props.expand,
-            label: this.props.label,
-    }
-
-    onSelect = (event) => {
-        const value = event.target.id;
-        this.props.labelUpdate ? this.setState({ label: value }) : this.setState({ label: this.state.label })
-        this.setState({ expand: !this.state.expand })
-        this.props.onSelect(value)
-
-    }
-
-    expandDrop = () => {
-        if (this.props.active) {
-            this.setState({ expand: !this.state.expand })
+    useEffect(()=>{
+        if(Object.entries(option).length !== 0 ){
+            console.log(option)
+            onSelect(option)
+            setOption({})
         }
-    };
-
-    noActionN = () => {
-
-    }
-
-    render() {
-        const {
-            active,
-            content,
-            style
-        } = this.props;
-        const {
-            label,
-            expand
-        } = this.state;
-
-        return (
-            <>
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                    rel="stylesheet" />
-                <Button onClick={this.expandDrop} disabled={active} style={style}>
-                    {label}
-                    <i className="material-icons">
-                        {
-                            expand
-                                ? arrowUp
-                                : arrowDown
-                        }</i>
-                </Button>
-                {
-                    expand
-                        ? <div className={Styles.dropBox} onClick={this.onSelect}>
-                            {
-                                content.map((value) =>
-                                    <Button id={value} key={value} style={{ marginBottom: "2px", width: "100%" }} onClick={this.noActionN}>
-                                        {value}
-                                    </Button>
-                                )}
-                        </div>
-                        : <></>
-                }
-            </>
-
-        )
-
-    }
+    },[option, onSelect])
+    return (
+        <div>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                rel="stylesheet" />
+            <Button onClick={()=>{setDisplay(!display)}} disabled={disabled} style={style}>
+                {_label}
+                <i className="material-icons">
+                    {
+                        display
+                            ? arrowUp
+                            : arrowDown
+                    }
+                </i>
+            </Button>
+            {
+                display
+                ? <div className={Styles.dropBox}>
+                    {
+                        arrayOptions.map((value,index) =>
+                            <Button id={value} key={value} style={{ marginBottom: "2px", width: "100%" }} 
+                            onClick={()=>{
+                                setOption({"index": index, "option":value});
+                                setDisplay(false);
+                                if(isLabelUpdate){setLabel(value)}
+                            }}
+                            >
+                                {value}
+                            </Button>
+                        )}
+                </div>
+                : <></>
+            }
+        </div>
+    );
 }
 
-function noAction(value) {
-    console.warn('Select item ' + value + ' has no activity')
-}
-
-const styleDropDown = {
-    width: "auto",
-    paddingLeft: "5px",
-    paddingRight: "5px"
-}
+export default DropDown;
 
 DropDown.propTypes = {
+    arrayOptions: PropTypes.array,
     disabled: PropTypes.bool,
-    content: PropTypes.array,
-    expand: PropTypes.bool,
+    isDisplay: PropTypes.bool,
+    islabelUpdate: PropTypes.bool,
     label: PropTypes.string,
-    labelUpdate: PropTypes.bool,
-    onselect: PropTypes.func,
+    onSelect: PropTypes.func,
     style: PropTypes.object
-};
-
-DropDown.defaultProps = {
-    disabled: false,
-    content: [],
-    expand: false,
-    label: "DropDown",
-    labelUpdate: true,
-    onSelect: noAction,
-    style: styleDropDown
 };
 
