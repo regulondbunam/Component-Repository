@@ -4,10 +4,10 @@
 # Component name 
 	
 	[IconButton]
-	
+### Version 1.0
 ## Description  
 	
-	[-]
+	[This component is a simple button, activated by a click, ]
 
 ## Category   
 	
@@ -30,7 +30,7 @@
 
   | Prop    | type     | default                   | description                                                  |
 | ------- | -------- | ------------------------- | ------------------------------------------------------------ |
-| active  | boolean  | true                      | enables or disables the button                               |
+| disabled  | boolean  | true                      | enables or disables the button                               |
 | icon    | string   | "sentiment_satisfied_alt" | Shows an icon inside the button, you can get the name of the icon using the MATERIAL-ICONS library  https://material.io/resources/icons/?style=baseline |
 | style   | object   | {}                        |                                                              |
 | onClick | function |                           |                                                              |
@@ -104,24 +104,26 @@ import Styles from './Buttons.module.css'
 export default class IconButton extends Component {
 
     handleOnClickLink = (event) => {
-        if(this.props.active){
+        if(this.props.disabled){
             this.props.onClick(event);
         }
     };
 
     render() {
         const {
-            active,
+            className,
+            disabled,
             icon,
+            iconStyle,
+            iconClassName = '',
             style,
-            iconStyle
         } = this.props;
             return (
                 <>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                     rel="stylesheet" />
-                <button style={style} className={selectStyle(active)} onClick={this.handleOnClickLink}>
-                    <i className="material-icons" style={iconStyle}>{icon}</i>
+                <button style={style} className={selectStyle(disabled,className)} onClick={this.handleOnClickLink}>
+                    <i className={`material-icons ${iconClassName}`} style={iconStyle}>{icon}</i>
                 </button>
                 </>
             )  
@@ -129,11 +131,11 @@ export default class IconButton extends Component {
     }
 }
 
-function selectStyle (active) {
-    let styleClass = Styles.iconButton+" "+Styles.default
-    active
-    ? styleClass += " "
-    : styleClass += " "+Styles.disabled
+function selectStyle (disabled,className) {
+    let styleClass = className+" "+Styles.iconButton+" "+Styles.default
+    disabled
+    ? styleClass += " "+Styles.disabled
+    : styleClass += " "
     return styleClass
 }
 
@@ -142,14 +144,14 @@ function noAction() {
 }
 
 IconButton.propTypes = {
-    active: PropTypes.bool,
+    disabled: PropTypes.bool,
     icon: PropTypes.string,
     onClick: PropTypes.func,
     style: PropTypes.object
 };
 
 IconButton.defaultProps = {
-    active: true,
+    disabled: false,
     icon: "sentiment_satisfied_alt",
     onClick: noAction,
     style: {}

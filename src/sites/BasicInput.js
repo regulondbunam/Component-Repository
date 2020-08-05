@@ -31,7 +31,7 @@ export default function BasicInput() {
       <h3>IconButton</h3>
       <IconButton/>
       <br/>
-      <IconButton active={false}/>
+      <IconButton disabled={true}/>
       <h3>DropDown</h3>
       <DropDown arrayOptions={op} onSelect={alertDropdown}/>
       <br/>
