@@ -79,24 +79,3 @@
 .dropBox:hover{
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.747);
     }
-
-.flipComponent{
-    display: flex;
-    border: none;
-    outline: none;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-
-    width: 48px;
-    height: 27px;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.35;
-    letter-spacing: normal;
-    text-align: center;
-    color: #32617d;
-}

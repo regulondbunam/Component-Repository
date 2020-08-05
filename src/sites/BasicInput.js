@@ -1,5 +1,5 @@
 import React from 'react';
-import Button, {IconButton, DropDown, Split, Flip} from '../ui-components/basicInput/Buttons'
+import Button, {IconButton, DropDown, Split} from '../ui-components/basicInput/Buttons'
 import CheckBox, {RadioButtonGrup, CheckBoxGrup} from '../ui-components/basicInput/Selectors'
 import {TextBox, TextPassword, TextArea} from '../ui-components/basicInput/Text'
 import Link from '../ui-components/basicInput/Link'
@@ -40,10 +40,6 @@ export default function BasicInput() {
       <h3>Split</h3>
       <Split options={op} onClick={alertDropdown}></Split>
       <br/>
-      <h3>Flip</h3>
-      <Flip label={"Left"} orientation={'l'}/>
-      <br/>
-      <Flip label={"Right"} orientation={'r'}/>
       <h2>Selectors</h2>
       <h3>CheckBox</h3>
       <CheckBox />
