@@ -15,15 +15,15 @@ function App() {
     <Router>
       <div style={{ paddingLeft: "30px" }}>
         <h1>RegulonDB UI-Components</h1>
-        <Link to="/Input"><h2>BasicInput</h2></Link>
-        <Link to="/Output"><h2>InfoDisplay</h2></Link>
+        <Link to="/Input"><h2>Input</h2></Link>
+        <Link to="/Output"><h2>Output</h2></Link>
         <Link to="/RegulonDB-web"><h2>RegulonDB-web</h2></Link>
 
         <Switch>
-          <Route exact path="/BasicInput">
+          <Route exact path="/Input">
             <BasicInput />
           </Route>
-          <Route exact path="/InfoDisplay">
+          <Route exact path="/Output">
             <InfoDisplay />
           </Route>
           <Route exact path="/RegulonDB-web">
