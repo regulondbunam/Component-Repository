@@ -1,27 +1,71 @@
-# Split Component 0.1
+/**
 
-to import:
-```js
-import {Split} from "regulondb-component-repository/uiComp/basicInput/Buttons"
-```
+# Component (user guide)
+# Component name 
+[Split --v1.0 ]
 
-## Content in Split component
+## Description  
+[This component is a button with the ability to change the call to action, is composed of two parts the main button and a bullet that allows you to display the arrayOptions to exchange the button. ]
 
-### Default Component
+## Category   
+[Visual, FunctionalComponent]  
 
-#### Split
+## Live demo 
+[-]
 
-![Split B](https://i.ibb.co/jgV7d8F/Captura-de-Pantalla-2019-10-23-a-la-s-12-18-08.png)
-![open split](https://i.ibb.co/2sd3307/Captura-de-Pantalla-2019-10-23-a-la-s-12-29-45.png)
+## Installation 
+[-]
 
-use component
-```js
-<Split options={['araC','araB','araA']}  onClick={this._handleOnclick} />
-```
-## Props
+## Usage 
+[-]
 
-name | Data Type  | Default  | Description
---|---|---|--
-label  | String  | 'Select Option'  | label
-options  | Array String  | [] |  options
-onClick  | Function  | noAction  | function to select a option
+## Props 
+
+| prop              | type     | default    | description                                      |
+| ----------------- | -------- | ---------- | ------------------------------------------------ |
+| accent            | boolean  | false      | enables accent button design                     |
+| arrayOptions      | array    | []         | arrangement of display options                   |
+| buttonClassName   | string   |            | Class Name of item button                        |
+| dropdownClassName | string   |            | Class Name of item dropdown                      |
+| disabled          | boolean  | false      | disable the button                               |
+| label             | string   | Button     | button label                                     |
+| isDisplay         | boolean  | false      | enables the component to be displayed at startup |
+| styleButton       | object   | {}         |                                                  |
+| styleDropdown     | object   | {}         |                                                  |
+| onClick           | function | noAction() | insert the function to be executed when pressed  |
+
+## Exception
+__Warning__  
+​    button has no activity, use Prop "onClick" to add Activity with a function
+
+## License
+​    [MIT]
+
+## Author 
+​    [CCG-UNAM-RegulonDB]
+
+**/
+
+
+/**
+
+# Component (technical guide)
+
+## Component Type 
+​    [funtional component, class]
+
+## Dependencies
+​    [React { Component },PropTypes, RegulonDB-uicomponents {Button, DropDown}]
+
+## States
+| state   | type    | default     | description                 |
+| ------- | ------- | ----------- | --------------------------- |
+| display | boolean | false       | dropdown box display status |
+| option  | object  | {}          | status of selected option   |
+| \_label | string  | PROP[label] | dropdown label status       |
+
+# Function description
+
+[-]
+
+**/
