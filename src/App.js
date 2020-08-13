@@ -15,8 +15,8 @@ function App() {
     <Router>
       <div style={{ paddingLeft: "30px" }}>
         <h1>RegulonDB UI-Components</h1>
-        <Link to="/BasicInput"><h2>BasicInput</h2></Link>
-        <Link to="/InfoDisplay"><h2>InfoDisplay</h2></Link>
+        <Link to="/Input"><h2>BasicInput</h2></Link>
+        <Link to="/Output"><h2>InfoDisplay</h2></Link>
         <Link to="/RegulonDB-web"><h2>RegulonDB-web</h2></Link>
 
         <Switch>
