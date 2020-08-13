@@ -2,7 +2,7 @@ import React from 'react';
 import Button, {IconButton, DropDown, Split} from '../ui-components/basicInput/Buttons'
 import CheckBox, {RadioButtonGrup, CheckBoxGrup} from '../ui-components/basicInput/Selectors'
 import {TextBox, TextPassword, TextArea} from '../ui-components/basicInput/Text'
-import Link from '../ui-components/basicInput/Link'
+import Link from '../ui-components/basicInput/HLink'
 
 const op = ["gene","GU","product","TF","Regulondb"]
 
