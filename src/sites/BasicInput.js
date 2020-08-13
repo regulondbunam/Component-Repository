@@ -1,8 +1,8 @@
 import React from 'react';
-import Button, {IconButton, DropDown, Split} from '../ui-components/basicInput/Buttons'
-import CheckBox, {RadioButtonGrup, CheckBoxGrup} from '../ui-components/basicInput/Selectors'
-import {TextBox, TextPassword, TextArea} from '../ui-components/basicInput/Text'
-import Link from '../ui-components/basicInput/HLink'
+import Button, {IconButton, DropDown, Split} from '../ui-components/Input/Buttons'
+import CheckBox, {RadioButtonGrup, CheckBoxGrup} from '../ui-components/Input/Selectors'
+import {TextBox, TextPassword, TextArea} from '../ui-components/Input/Text'
+import Link from '../ui-components/Input/HLink'
 
 const op = ["gene","GU","product","TF","Regulondb"]
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Link from '../../basicInput/HLink'
+import Link from '../../Input/HLink'
 
 import Styles from './Modal.module.css'
 
