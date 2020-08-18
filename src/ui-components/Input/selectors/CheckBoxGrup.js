@@ -154,6 +154,7 @@ export default class CheckBoxGrup extends Component {
             
             <CheckBox key={op} value={this.state.value} name={name} label={op} checked={this.valueCheckedOptions(this.state.checkedLabel,op)} onChange={this._onChange} />
             )}
+            <CheckBox/>
         </React.Fragment>)
     }
 
