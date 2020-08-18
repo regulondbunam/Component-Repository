@@ -4,7 +4,7 @@ import CheckBox, {RadioButtonGrup, CheckBoxGrup} from '../ui-components/Input/Se
 import {TextBox, TextPassword, TextArea} from '../ui-components/Input/Text'
 import Link from '../ui-components/Input/HLink'
 
-const op = ["gene","GU","product","TF","Regulondb"]
+const options = ["gene","GU","product","TF","Regulondb"]
 
 function me(){
   alert("hola")
@@ -13,6 +13,7 @@ function me(){
 function alertDropdown (value){
   alert(`Se ha seleccionado: ${value.option}`)
 }
+
 
 export default function BasicInput() {
 
@@ -33,19 +34,19 @@ export default function BasicInput() {
       <br/>
       <IconButton disabled={true}/>
       <h3>DropDown</h3>
-      <DropDown arrayOptions={op} onSelect={alertDropdown}/>
+      <DropDown arrayOptions={options} onSelect={alertDropdown}/>
       <br/>
       <DropDown disabled={true}/>
       <br/>
       <h3>Split</h3>
-      <Split arrayOptions={op} onClick={alertDropdown}></Split>
+      <Split arrayOptions={options} onClick={alertDropdown}></Split>
       <br/>
       <h2>Selectors</h2>
       <h3>CheckBox</h3>
-      <CheckBox />
-      <CheckBoxGrup name="grupTwo" options={op} checkedOptions={[op[0],op[2]]}/>
+      <CheckBox value="simple CheckBox" />
+      <CheckBoxGrup title="CheckBox Grup" onChange={(value)=>{console.log(value)}} arrayOptions={options} arraySelectOptions={[options[0],options[2]]} arrayDisabledOptions={[options[4]]}/>
       <h3>RadioButtonGrup</h3>
-      <RadioButtonGrup name="grupOne" options={op} checkedOption={op[0]}/>
+      <RadioButtonGrup name="grupOne" options={options} checkedOption={options[0]}/>
       <br/>
       <h2>Input Text</h2>
       <h3>TextBox</h3>

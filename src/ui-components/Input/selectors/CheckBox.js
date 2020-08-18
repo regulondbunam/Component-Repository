@@ -74,7 +74,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import Styles from './Selectors.module.css'
 
-const warnMenssage = "Checkbox does not have an added function for the change in prop \"onChange\""
+const warnMenssage = "Checkbox does not have an added function for the change in prop \"onChange\" in checkbox: "
 
 
 
@@ -83,7 +83,7 @@ const CheckBox = ({
     isCheck = false,
     value = "",
     label = "checkBox",
-    onChange = () =>{console.warn(warnMenssage)} 
+    onChange = (value) => {console.warn(warnMenssage,value)} 
 }) => {
     const [check, setCheck] = useState(isCheck)
 
@@ -96,7 +96,7 @@ const CheckBox = ({
                 checked={check}
                 onChange={()=>{
                     setCheck(!check);
-                    onChange();
+                    onChange(value);
                 }}
                 value={value}
             />

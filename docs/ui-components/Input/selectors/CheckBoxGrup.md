@@ -2,41 +2,25 @@
 # Component (user guide)
 
 # Component name 
-	
-	[CheckBoxGrup]
-	
+[CheckBoxGrup --v1.0]
+
 ## Description  
-	
-	[Component allows you to group checkbox components]
+[Component allows you to group checkbox components]
 
 ## Category   
-	
-	[Structural]  
+[Structural, functional]  
 
 ## Live demo 
-	
-	[---]
-
+[-]
 
 ## Installation 
-
-	[---]
+[-]
 
 ## Usage 
-	
-	[---]
+[---]
 
 ## Props 
 
-| Prop          | Type     | Default  | Description |
-| ------------- | -------- | -------- | ----------- |
-| checkedOption | String   | ""       |             |
-| dropdown      | boolean  | flase    |             |
-| name          | string   | ""       |             |
-| options       | array    | []       |             |
-| style         | object   | {}       |             |
-| title         | string   | ""       |             |
-| onChange      | function | noAction |             |
 
 
 
@@ -49,7 +33,7 @@
 	[MIT]
 
 ## Author 
-	
+
 	[CCG-UNAM-RegulonDB]
 
 **/
@@ -67,34 +51,34 @@
 	[React, PropTypes, ui-components CheckBox]
 
 ## States
-	
+
 	| Property | Value | Desctiption |
 	| -------- | ----- | ----------- |
 	|          |       |             |
-	
+
 
 # Function description
 
 	## [function name]
-
+	
 	__Description:__  
 	[Description of the function]
-
+	
 	__Usage:__
-
+	
 		```javascript
-
+	
 		&function(Parameters, if any);
-
+	
 		```
 	__Scope: __
-
+	
 	[Scope details]
-
+	
 	__Input Parameter:__  
 		* __Param - __ __[Name]__
 		Description
-
+	
 	__Return:__  
 		* __Type - __ __[Name]__
 		Description (if necessary)
