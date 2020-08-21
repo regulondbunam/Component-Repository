@@ -1,99 +1,67 @@
 /**
+
 # Component (user guide)
 
 # Component name 
-
-	[RadioButton]
+[RadioButton --v1.0]
 
 ## Description  
-
-	[This component is a graphical control that allows the user to choose only one of a predefined set of mutually exclusive options. ]
+[
+A radio button allows the user to choose one of a predefined set of options.
+]
 
 ## Category   
-
-	[Visual]  
-
+[Visual]  
 ## Live demo 
-
-	[code to iframe CodeSandbox]
-
+[-]
 
 ## Installation 
-
-	[---]
+[-]
 
 ## Usage 
 
-	[to use it is necessary to contain it in a RadioButtonGrup]
+[ - ]
 
 ## Props 
 
 | Prop     | Type     | Default       | Description                                                  |
 | -------- | -------- | ------------- | ------------------------------------------------------------ |
-| active   | boolean  | true          | Enables or disables the radiobutton                          |
-| checked  | boolean  | false         | check or uncheck radiobutton                                 |
-| label    | String   | "radioButton" | radiobutton label                                            |
-| name     | String   | "default"     | defines radio button groups with the name property (radio buttons with the same name belong to the same group).The name attribute is used to identify form data after it has been submitted to the server, or to reference form data |
-| onChange | function | noAction()    | receives a function to be executed when the radiobutton is checked |
+| disabled | boolean  | true          | Enables or disables the radio button                         |
+| isCheck  | boolean  | false         | check or uncheck radio button                                |
+| name     | string   | ""            | name of radio button Group                                   |
+| value    | string   | ""            | value of the radio button                                    |
+| label    | String   | "radioButton" | Radio button Label                                           |
+| onChange | function |               | receives a function to be executed when the radioButton change |
 
 
 
 ## Exception
-	__Category (Error, Warning or Message)__  
-	Description of the exception (if necessary)
+
+__Warning__  
+
+RadioButton does not have an added function for the change in prop \"onChange\" in radioButton: 
 
 ## License
 
-	[MIT]
+[MIT]
 
 ## Author 
 
-	[CCG-UNAM-RegulonDB]
+[CCG-UNAM-RegulonDB]
 
 **/
 
 
 /**
+
 # Component (technical guide)
 
 ## Component Type 
 
-	[pure]
+[functional component]
 
 ## Dependencies
 
-	[React, PropTypes, Style]
+[React, PropTypes, Style]
 
-## States
-
-	| Property | Value | Desctiption |
-	| -------- | ----- | ----------- |
-	|          |       |             |
-
-
-# Function description
-
-	## [noAction]
-	
-	__Description:__  
-	[this function sends the console a warning that the button does not have a designated action]
-	
-	__Usage:__
-	
-		```javascript
-	
-		noAction;
-	
-		```
-	__Scope: __
-	
-	[Scope details]
-	
-	__Input Parameter:__  
-		* __Param - __ __[Name]__
-		Description
-	
-	__Return:__  
-		* __Type - __ __[Name]__
-	    Description (if necessary)
 **/

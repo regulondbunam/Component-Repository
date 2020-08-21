@@ -1,6 +1,6 @@
 import React from 'react';
 import Button, {IconButton, DropDown, Split} from '../ui-components/Input/Buttons'
-import CheckBox, {RadioButtonGrup, CheckBoxGroup} from '../ui-components/Input/Selectors'
+import CheckBox, {RadioButtonGroup, CheckBoxGroup} from '../ui-components/Input/Selectors'
 import {TextBox, TextPassword, TextArea} from '../ui-components/Input/Text'
 import Link from '../ui-components/Input/HLink'
 
@@ -46,7 +46,7 @@ export default function BasicInput() {
       <CheckBox value="simple CheckBox" />
       <CheckBoxGroup title="CheckBox Group" onChange={(value)=>{console.log(value)}} arrayOptions={options} arraySelectOptions={[options[0],options[2]]} arrayDisabledOptions={[options[4]]}/>
       <h3>RadioButtonGrup</h3>
-      <RadioButtonGrup name="grupOne" options={options} checkedOption={options[0]}/>
+      <RadioButtonGroup name="grupOne" arrayOptions={options} selectOption={options[0]} onChange={(value)=>{console.log(value)}}/>
       <br/>
       <h2>Input Text</h2>
       <h3>TextBox</h3>
