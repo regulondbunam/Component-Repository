@@ -1,12 +1,70 @@
+/**
+# Component (user guide)
+
+# Component name 
+[CheckBoxGroup --v1.0]
+
+## Description  
+[Component allows you to group checkbox components]
+
+## Category   
+[Structural, functional]  
+
+## Live demo 
+[-]
+
+## Installation 
+[-]
+
+## Usage 
+[---]
+
+## Props 
+
+| prop                 | type   | default | description                                              |
+| -------------------- | ------ | ------- | -------------------------------------------------------- |
+| arrayOptions         | array  | []      | Set of options for the checkbox group                    |
+| arraySelectOptions   | array  | []      | Set of options selected for the checkbox group           |
+| arrayDisabledOptions | array  | []      | Set of options not available for the checkbox group      |
+| title                | string | []      | Title of the checkbox group                              |
+| onChange             | func   |         | Function you receive when there are changes in the group |
+
+## Exception
+__ Warning __  
+checkboxGroup does not have an added function for the change in prop \"onChange\"
+
+## License
+[MIT]
+
+## Author 
+[CCG-UNAM-RegulonDB]
+
+**/
 
 
-import React, {Component, useState } from 'react'
+/**
+# Component (technical guide)
+## Component Type 
+[Hoock]
+
+## Dependencies
+[React, {useState}, PropTypes, ui-components CheckBox]
+
+## States
+
+| state         | type  | default                 | description                |
+| ------------- | ----- | ----------------------- | -------------------------- |
+| selectOptions | array | prop.arraySelectOptions | Status of selected options |
+
+**/
+
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import CheckBox from './CheckBox'
 
-const warnMenssage = "CheckboxGrup does not have an added function for the change in prop \"onChange\""
+const warnMenssage = "CheckboxGroup does not have an added function for the change in prop \"onChange\""
 
-const CheckBoxGrup = ({
+const CheckBoxGroup = ({
     arrayOptions = [],
     arraySelectOptions = [],
     arrayDisabledOptions = [],
@@ -76,70 +134,12 @@ const CheckBoxGrup = ({
     );
 }
  
-export default CheckBoxGrup;
+export default CheckBoxGroup;
 
-
-class CheckBoxGrupA extends Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            checkedLabel: this.props.checkedOptions,
-        }
-        this._onChange = this._onChange.bind(this);
-    }
-
-    _onChange = (label,checked) =>{
-        let arr = this.state.checkedLabel
-        if(checked){
-            arr[this.state.checkedLabel.length] = label
-            this.setState({checkedLabel: arr})
-        }else{
-            let indx = arr.indexOf(label)
-            arr.splice(indx,1)
-            this.setState({checkedLabel: arr})
-        }
-        
-    }
-
-    valueCheckedOptions(chekedState,option){
-        let optionCheck = chekedState.find(o => o === option)
-        if(optionCheck !== undefined){
-            return true
-        } else{
-            return false
-        }
-    }
-
-    render() {
-        const {
-            name,
-            op,
-            options,
-            title
-        } = this.props
-        return (
-        <React.Fragment>
-            {title}
-            {options.map((option)=>
-            <CheckBox key={option} value={this.state.value} name={name} label={op} checked={this.valueCheckedOptions(this.state.checkedLabel,op)} onChange={this._onChange} />
-            )}
-        </React.Fragment>)
-    }
-
-}
-
-CheckBoxGrup.propTypes = {
-    checkedOptions: PropTypes.array,
-    dropdown: PropTypes.bool,
-    GrupOf: PropTypes.elementType,
-    name: PropTypes.string,
-    options: PropTypes.array,
-    onChange: PropTypes.func,
-    style: PropTypes.object,
-    title: PropTypes.string
-};
-
-CheckBoxGrup.defaultProps = {
-    checkedOptions: []
+CheckBoxGroup.propTypes = {
+    arrayOptions: PropTypes.array,
+    arrayDisabledOptions: PropTypes.array,
+    arraySelectOptions: PropTypes.array,
+    title: PropTypes.string,
+    onChange: PropTypes.func
 };

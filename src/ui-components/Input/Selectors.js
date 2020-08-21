@@ -1,6 +1,6 @@
 import CheckBox from './selectors/CheckBox'
 import RadioButtonGrup from './selectors/RadioButtonGrup'
-import CheckBoxGrup from './selectors/CheckBoxGrup'
+import CheckBoxGroup from './selectors/CheckBoxGroup'
 
 export default CheckBox
-export {RadioButtonGrup, CheckBoxGrup}
+export {RadioButtonGrup, CheckBoxGroup}
