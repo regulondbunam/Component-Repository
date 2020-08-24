@@ -1,21 +1,16 @@
 /**
 # Component (user guide)
-
 # Component name 
-
-	[TextArea]
-
+[TextArea]
+	
 ## Description  
-
-	[Component allows the entrytext]
+[Component allows the entrytext]
 
 ## Category   
-
-	[Visual]  
+[Visua, functionall]  
 
 ## Live demo 
-
-	[---]
+[-]
 
 
 ## Installation 
