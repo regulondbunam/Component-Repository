@@ -1,0 +1,3 @@
+[submodule "regulodb-componentTemplate"]
+	path = regulodb-componentTemplate
+	url = https://github.com/galarcon-ccg/regulodb-componentTemplate.git
