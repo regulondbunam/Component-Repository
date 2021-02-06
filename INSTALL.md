@@ -1,18 +1,19 @@
-# [Software name]
+# How to use Component repository?
 
-hola
+Hello, this repository is a repository of resources for web development, with the purpose that everything needed for RegulonDB web development is in one place, in this section we will describe how to use and install the resources for you to start your web development, good luck :) 
 
+Content:
 
-- ## Installation instructions
+- UI-Components v0.0.6
+- WebApp development template of regulonDB 
 
-[Describe installation instructions of the software.]
+## Ui-Components
+
+This is a react component library for RegulonDB web interface development.
 
 1. Step 1
-Execute:
+download
 
-```shell
-$ command
-```
 2. Step 2
 3. Step x
 
