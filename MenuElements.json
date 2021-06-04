@@ -1,0 +1,45 @@
+{
+  "comentario": "Este docuemnto es utilizado por la aplicacion Getting started de regulon para mostrar el contenido de documentacion de este repositorio",
+  "menuElements": [
+    {
+      "id": "input_0",
+      "title": "Input",
+      "value": "input",
+      "display": true,
+      "sons": [
+        {
+          "id": "input_buttons",
+          "title": "Buttons",
+          "value": "buttons",
+          "sons": [
+            {
+              "id": "..._buttons_button",
+              "title": "Button",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/button.jsx"
+            }
+          ]
+        },
+        {
+          "id": "input_selectors",
+          "title": "Selectors",
+          "value": "selector"
+        },
+        {
+          "id": "input_text",
+          "title": "Text Box",
+          "value": "text"
+        }
+      ]
+    },
+    {
+      "id": "Output_0",
+      "title": "Output",
+      "value": "output"
+    },
+    {
+      "id": "web_0",
+      "title": "RegulonDB web-componets",
+      "value": "web"
+    }
+  ]
+}
