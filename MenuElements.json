@@ -2,6 +2,26 @@
   "comentario": "Este docuemnto es utilizado por la aplicacion Getting started de regulon para mostrar el contenido de documentacion de este repositorio",
   "menuElements": [
     {
+      "id": "about_0",
+      "title": "About",
+      "value": "about",
+      "display": true,
+      "sons": [
+        {
+          "id": "input_buttons",
+          "title": "Description",
+          "value": "description",
+          "sons": [
+            {
+              "id": "..._About_description",
+              "title": "Home",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/README.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "input_0",
       "title": "Input",
       "value": "input",
