@@ -8,3 +8,10 @@ The library contains user interface components, mainly of two classes "input" an
 ## view iu-components on CodeSandbox
 
 [![Edit loving-ganguly-4ifb7](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/loving-ganguly-4ifb7?fontsize=14&hidenavigation=1&theme=dark)
+
+<iframe src="https://codesandbox.io/embed/loving-ganguly-4ifb7?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="loving-ganguly-4ifb7"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
