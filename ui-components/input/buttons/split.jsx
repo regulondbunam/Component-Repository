@@ -80,7 +80,7 @@ __Warning__
 
 [-]
 
-
+**/
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
