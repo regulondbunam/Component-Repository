@@ -11,12 +11,12 @@
 [-]
 ## Installation 
 [-]
-## Usage 
-​    [
+## Usage ∫
+​    
 
-​         <Button label="Button" onClick={actionFunction}/>
+​  `<Button label="Button" onClick={actionFunction}/>`
 
-​    ]
+​    
 ## Props
 
 | props     | type     | default    | description                                     |
