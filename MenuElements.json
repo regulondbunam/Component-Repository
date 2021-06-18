@@ -36,6 +36,21 @@
               "id": "..._buttons_button",
               "title": "Button",
               "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/button.jsx"
+            },
+            {
+              "id": "..._buttons_dropDown",
+              "title": "DropDown",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/drop_down.jsx"
+            },
+            {
+              "id": "..._buttons_iconButton",
+              "title": "IconButton",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/icon_button.jsx"
+            },
+            {
+              "id": "..._buttons_split",
+              "title": "Split",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/split.jsx"
             }
           ]
         },
@@ -60,6 +75,11 @@
       "id": "web_0",
       "title": "RegulonDB web-componets",
       "value": "web"
+    },
+    {
+      "id": "ws_components",
+      "title": "RegulonDB React webservices",
+      "value": "ws"
     }
   ]
 }
