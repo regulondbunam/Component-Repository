@@ -43,6 +43,7 @@
               "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/drop_down.jsx"
             },
             {
+              "id": "..._buttons_IconButton",
               "title": "IconButton",
               "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/icon_button.jsx"
             },
@@ -54,14 +55,36 @@
           ]
         },
         {
+          "id": "input_text",
+          "title": "Text Box",
+          "value": "text",
+          "sonsA": [
+            {
+              "id": "..._text_A",
+              "title": "Button",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/button.jsx"
+            },
+            {
+              "id": "..._text_B",
+              "title": "DropDown",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/drop_down.jsx"
+            },
+            {
+              "id": "..._text_D",
+              "title": "IconButton",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/icon_button.jsx"
+            },
+            {
+              "id": "..._text_F",
+              "title": "Split",
+              "value": "https://raw.githubusercontent.com/regulondbunam/Component-Repository/ui-components/ui-components/input/buttons/split.jsx"
+            }
+          ]
+        },
+        {
           "id": "input_selectors",
           "title": "Selectors",
           "value": "selector"
-        },
-        {
-          "id": "input_text",
-          "title": "Text Box",
-          "value": "text"
         }
       ]
     },
