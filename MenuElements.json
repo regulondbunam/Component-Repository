@@ -58,7 +58,7 @@
           "id": "input_text",
           "title": "Text Box",
           "value": "text",
-          "sonsA": [
+          "sons": [
             {
               "id": "..._text_A",
               "title": "Button",
