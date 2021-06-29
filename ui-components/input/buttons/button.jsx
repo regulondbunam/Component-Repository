@@ -3,8 +3,7 @@
 
 This component is a simple button, activated by a click, has two different aspects, by default, accent
 
-## Category   
-[Visual, Functional Component]  
+ 
 ## Live demo 
 
 <iframe src="https://codesandbox.io/embed/awesome-breeze-20lr3?fontsize=14&hidenavigation=1&theme=dark"
@@ -14,15 +13,10 @@ This component is a simple button, activated by a click, has two different aspec
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-## Installation 
-[-]
+## Usage 
 
-## Usage ∫
-​    
+`<Button label="Button" onClick={actionFunction}/>` 
 
-​  `<Button label="Button" onClick={actionFunction}/>`
-
-​    
 ## Props
 
 | props     | type     | default    | description                                     |
@@ -34,6 +28,13 @@ This component is a simple button, activated by a click, has two different aspec
 | label     | string   | Button     | button label                                    |
 | style     | object   | {}         |                                                 |
 | onClick   | function | noAction() | insert the function to be executed when pressed |
+
+## Installation
+
+[npm install ui-component]
+
+## Category   
+[Visual, Functional Component] 
 
 ## Exception
 
