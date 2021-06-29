@@ -1,10 +1,8 @@
 /**
-# Component (user guide)
-# Component name 
-[Button --v0.5.0]
+# Button v0.5.0
 
-## Description  
-[This component is a simple button, activated by a click, has two different aspects, by default, accent]
+This component is a simple button, activated by a click, has two different aspects, by default, accent
+
 ## Category   
 [Visual, Functional Component]  
 ## Live demo 
@@ -18,6 +16,7 @@
 
 ## Installation 
 [-]
+
 ## Usage ∫
 ​    
 
